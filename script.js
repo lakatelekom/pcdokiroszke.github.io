@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /* Háttérzene autoplay + gomb */
-    const music = document.getElementById("bg-music");
+    /*const music = document.getElementById("bg-music");
     const toggle = document.getElementById("music-toggle");
 
     setTimeout(() => {
