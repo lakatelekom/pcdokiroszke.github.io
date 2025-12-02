@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         playing = !playing;
     });
+    */
 
     /* HERO SLIDESHOW */
     const slides = Array.from(document.querySelectorAll(".hero-slide"));
