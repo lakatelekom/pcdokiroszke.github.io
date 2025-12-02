@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Doki Röszke</title>
+
+    <!-- Külső CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Háttérzene -->
+    <audio id="bg-music" autoplay loop muted>
+        <source src="pcdoki-music.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Zene KI/BE gomb -->
+    <button id="music-toggle">🔇 Zene ki</button>
+
+    <!-- Lebegő Messenger + Telefon widget -->
+    <div class="floating-contact-widget">
+        <button id="contact-toggle">💬</button>
+
+        <div class="contact-panel open" id="contact-panel">
+            <p>Vedd fel velem a kapcsolatot:</p>
+            <a href="tel:+36305701844" class="contact-btn phone">📞 Hívás</a>
+            <a href="https://m.me/laszlo.katona.777" target="_blank" class="contact-btn messenger">
+                💬 Messenger üzenet
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpcdokiroszke.hu"
+               target="_blank"
+               class="contact-btn share">
+                👍 Köszönöm, ha megosztod!
+            </a>
+        </div>
+    </div>
+
+    <!-- Felhők -->
+    <div class="clouds"></div>
+
+    <div class="page">
+        <!-- Felső sáv -->
+        <header class="topbar">
+            <div class="brand">
+                <h1 class="brand-title">
+                    <span class="brand-title-main">PC Doki</span>
+                    <span class="brand-title-pill">Röszke</span>
+                </h1>
+
+                <p class="brand-sub">
+                    Lassú a géped vagy már el sem indul?
+                </p>
+            </div>
+
+            <a href="tel:+36305701844" class="floating-call">
+                📞 +36 30 570-1844
+            </a>
+        </header>
+
+        <!-- Navi -->
+        <nav>
+            <div class="nav-links">
+                <a href="#rolam">Rólam</a>
+                <a href="#szolgaltatasok">Szolgáltatások</a>
+                <a href="#arak">Árak</a>
+                <a href="#kapcsolat">Kapcsolat</a>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-text">
+                <div class="hero-slides">
+                    <div class="hero-slide">
+                        <img src="doki-lassu-gep1.jpg" alt="Lassú laptop illusztráció">
+                        <h3>💻 Lassú a géped?</h3>
+                        <p>
+                            Nem kell rögtön új gépet venned.
+                            Alapos tisztítással, újrapasztázással, rendszer-újratelepítéssel,
+                            SSD-re váltással és memória-bővítéssel sokszor évekkel meg lehet hosszabbítani
+                            egy laptop vagy PC életét. Megnézem, mi az, ami nálad a legtöbbet gyorsítja,
+                            felesleges költségek nélkül.
+                        </p>
+                    </div>
+
+                    <div class="hero-slide">
+                        <img src="doki-lassu-gep2.jpg" alt="Lassú net illusztráció">
+                        <h3>🌐 Lassú a neted?</h3>
+                        <p>
+                            Lehet a szolgáltatónál a gond, lehet a routeren, vagy egyszerűen a beállításokkal van baj.
+                            Sebességméréssel, router-beállítással, csatornaváltással és firmware-frissítéssel
+                            kiderítem, hol akad el a sávszélesség. Elmagyarázom érthetően, mi a gond, és mit érdemes
+                            lépni – nem csak „varázslok”, aztán hazamegyek.
+                        </p>
+                    </div>
+
+                    <div class="hero-slide">
+                        <img src="doki-lassu-gep3.jpg" alt="Gyenge WiFi illusztráció">
+                        <h3>📶 Nincs WiFi a ház bizonyos részein?</h3>
+                        <p>
+                            Falusi, vastag falú házaknál teljesen normális, hogy a router jele nem jut el mindenhová.
+                            Felmérem, hol gyenge a jel, és javaslatot teszek mesh rendszerre, jelerősítőre
+                            vagy jobb routerre. A cél: stabil WiFi a nappaliban, hálóban, gyerekszobában,
+                            sőt akár a teraszon vagy a műhelyben is.
+                        </p>
+                    </div>
+
+                    <div class="hero-slide">
+                        <img src="doki-lassu-gep4.jpg" alt="Szülői felügyelet illusztráció">
+                        <h3>👨‍👩‍👧 Szeretnél szabályokat az otthoni netezésre?</h3>
+                        <p>
+                            A gyerekek ma már mindent a neten intéznek – nem baj, ha használják, de nem mindegy hogyan.
+                            Segítek beállítani a szülői felügyeletet, időkorlátokat, tartalomszűrést,
+                            és megmutatom, hogyan tudod te is kezelni ezeket később.
+                            Így nyugodtabb lehetsz, ők pedig biztonságosabban neteznek.
+                        </p>
+                    </div>
+
+                    <div class="hero-dots">
+                        <button class="hero-dot"></button>
+                        <button class="hero-dot"></button>
+                        <button class="hero-dot"></button>
+                        <button class="hero-dot"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-img-wrap">
+                <img src="doki1.jpg" alt="PC-DOKI népmese illusztráció">
+            </div>
+        </section>
+
+        <!-- Rólam -->
+        <section id="rolam" class="rolam-section">
+            <h2 class="section-title">Rólam</h2>
+
+            <div class="rolam-wrap">
+                <p>
+                    Üdvözöllek az oldalamon!
+                    Katona László vagyok, telekommunikációs üzemeltetési rendszermérnök és informatikai hálózati
+                    rendszergazda. Otthoni és céges, vezetékes és vezeték nélküli hálózatok tervezésében,
+                    kivitelezésében
+                    és fejlesztésében tudok segítséget nyújtani, valamint számítógépek, laptopok és egyéb perifériák
+                    szakszerű szervizeltetésében és cseréjében. Gamer PC-k összeszerelését, bővítését is vállalom – és
+                    még sok minden mást is. Keress bizalommal!
+                </p>
+
+                <img src="doki2.jpg" alt="PC Doki portré" class="rolam-photo">
+            </div>
+        </section>
+
+        <!-- Szolgáltatások -->
+        <section id="szolgaltatasok">
+            <h2 class="section-title">Szolgáltatások</h2>
+
+            <div class="services">
+                <div class="card">
+                    <h3>💻 PC-Laptop javítás</h3>
+                    <p>Tisztítás, gyorsítás, szerviz.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🖥 PC építés, tuning</h3>
+                    <p>Új gép összerakása vagy a régi felgyorsítása pl. SSD-vel, több RAM-mal.</p>
+                </div>
+
+                <div class="card">
+                    <h3>💾 Adatmentés</h3>
+                    <p>Fotók, dokumentumok, céges adatok mentése, helyreállítása.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📡 Internet & WiFi</h3>
+                    <p>Router beállítás, jelerősség javítás, pénztárcádnak megfelelő eszköz beszerzése.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🛠 Windows telepítés</h3>
+                    <p>Tiszta telepítés, driverek, alap programok, frissítések.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🖨 Nyomtató, szkenner</h3>
+                    <p>Telepítés, hálózati megosztás, tipikus hibák elhárítása.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🖥 Weboldal készítés</h3>
+                    <p>Modern, gyors, mobilbarát honlapok készítése vállalkozásoknak.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📣 Online marketing</h3>
+                    <p>Google- és Facebook-hirdetések, SEO, közösségi média kezelés.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Árak -->
+        <section id="arak">
+            <h2 class="section-title">Árak (irányadó)</h2>
+            <div class="contact-box">
+                <p><b>Diagnosztika:</b> 3 000 Ft</p>
+                <p><b>Windows telepítés:</b> 10 000 Ft</p>
+                <p><b>Laptop tisztítás:</b> 8 000 Ft</p>
+                <p><b>Kiszállás Röszkén belül:</b> megbeszélés szerint</p>
+            </div>
+        </section>
+
+        <!-- Kapcsolat anchor csak görgetéshez -->
+        <section id="kapcsolat">
+        </section>
+
+        <footer class="clean-footer">
+            <p>© 2025 PC Doki Röszke – Minden jog fenntartva.</p>
+            <p class="small">Az oldal nem gyűjt személyes adatokat, sütiket nem használ.</p>
+            <p class="small">Üzemeltető: Katona László e.v.</p>
+        </footer>
+    </div>
+
+    <!-- Külső JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
