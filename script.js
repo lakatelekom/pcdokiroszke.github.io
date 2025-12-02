@@ -55,73 +55,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     */
 
-    /* HERO SLIDESHOW */
-    const slides = Array.from(document.querySelectorAll(".hero-slide"));
-    const dots = Array.from(document.querySelectorAll(".hero-dot"));
+    /* HERO SLIDESHOW – CLICK TO NEXT */
+const slides = Array.from(document.querySelectorAll(".hero-slide"));
+const nextBtn = document.querySelector(".hero-next");
 
-    if (slides.length && dots.length && slides.length === dots.length) {
-        let current = 0;
-        let timer = null;
+if (slides.length && nextBtn) {
+    let current = 0;
 
-        function showSlide(i) {
-            slides[current].classList.remove("active");
-            dots[current].classList.remove("active");
-
-            current = i;
-
-            slides[current].classList.add("active");
-            dots[current].classList.add("active");
-        }
-
-        const slides = Array.from(document.querySelectorAll(".hero-slide"));
-        const dots = Array.from(document.querySelectorAll(".hero-dot"));
-        
-        if (slides.length && dots.length && slides.length === dots.length) {
-            let current = 0;
-        
-            function showSlide(i) {
-                slides[current].classList.remove("active");
-                dots[current].classList.remove("active");
-        
-                current = i;
-        
-                slides[current].classList.add("active");
-                dots[current].classList.add("active");
-            }
-        
-            // ➤ DOT-okra kattintás (marad)
-            dots.forEach((dot, i) => {
-                dot.addEventListener("click", () => {
-                    showSlide(i);
-                });
-            });
-        
-            // ➤ SLIDE-ra kattintás → Következő slide
-            slides.forEach((slide) => {
-                slide.addEventListener("click", () => {
-                    const next = (current + 1) % slides.length;
-                    showSlide(next);
-                });
-            });
-        
-            // Kezdő slide
-            showSlide(0);
-        }
-
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener("click", () => {
-                clearInterval(timer);
-                showSlide(i);
-                startSlider();
-            });
-        });
-
-        // induló állapot
-        slides[0].classList.add("active");
-        dots[0].classList.add("active");
-        startSlider();
+    function showSlide(i) {
+        slides[current].classList.remove("active");
+        current = i;
+        slides[current].classList.add("active");
     }
+
+    // Gomb → következő slide
+    nextBtn.addEventListener("click", () => {
+        const next = (current + 1) % slides.length;
+        showSlide(next);
+    });
+
+    // Slide-ra kattintás → ugyanaz mint a gomb
+    slides.forEach((slide) => {
+        slide.addEventListener("click", () => {
+            const next = (current + 1) % slides.length;
+            showSlide(next);
+        });
+    });
+
+    // Induló állapot
+    showSlide(0);
+}
+
 
     /* Lebegő kontakt widget (panel nyit/zár) */
     const contactToggle = document.getElementById("contact-toggle");
