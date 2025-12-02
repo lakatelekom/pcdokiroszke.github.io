@@ -73,12 +73,41 @@ document.addEventListener("DOMContentLoaded", function () {
             dots[current].classList.add("active");
         }
 
-        function startSlider() {
-            timer = setInterval(() => {
-                const next = (current + 1) % slides.length;
-                showSlide(next);
-            }, 10000); // 10 mp-enként vált
+        const slides = Array.from(document.querySelectorAll(".hero-slide"));
+        const dots = Array.from(document.querySelectorAll(".hero-dot"));
+        
+        if (slides.length && dots.length && slides.length === dots.length) {
+            let current = 0;
+        
+            function showSlide(i) {
+                slides[current].classList.remove("active");
+                dots[current].classList.remove("active");
+        
+                current = i;
+        
+                slides[current].classList.add("active");
+                dots[current].classList.add("active");
+            }
+        
+            // ➤ DOT-okra kattintás (marad)
+            dots.forEach((dot, i) => {
+                dot.addEventListener("click", () => {
+                    showSlide(i);
+                });
+            });
+        
+            // ➤ SLIDE-ra kattintás → Következő slide
+            slides.forEach((slide) => {
+                slide.addEventListener("click", () => {
+                    const next = (current + 1) % slides.length;
+                    showSlide(next);
+                });
+            });
+        
+            // Kezdő slide
+            showSlide(0);
         }
+
 
         dots.forEach((dot, i) => {
             dot.addEventListener("click", () => {
