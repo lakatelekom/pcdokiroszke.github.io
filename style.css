@@ -560,3 +560,29 @@ section p {
         display: none;
     }
 }
+.hero-next {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 18px;
+    background: #15803d;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.hero-next:hover {
+    background: #0f632d;
+    transform: translateX(-50%) scale(1.04);
+}
+
+.hero-next:active {
+    transform: translateX(-50%) scale(0.97);
+}
+
