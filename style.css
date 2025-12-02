@@ -503,7 +503,7 @@ section p {
 
 .floating-call {
     position: fixed;
-    top: 20px;
+    top: 120px;
     right: 20px;
     z-index: 9999;
     background: #15803d;
