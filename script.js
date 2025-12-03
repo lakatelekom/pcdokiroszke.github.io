@@ -27,100 +27,61 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* Háttérzene autoplay + gomb */
-    /*const music = document.getElementById("bg-music");
-    const toggle = document.getElementById("music-toggle");
-
-    setTimeout(() => {
-        try {
-            music.muted = false;
-            music.volume = 0.08; // nagyon halk
-        } catch (e) {
-            console.warn("A böngésző blokkolhatja az automatikus lejátszást.");
-        }
-    }, 1200);
-
-    let playing = true;
-
-    toggle.addEventListener("click", () => {
-        if (playing) {
-            music.pause();
-            toggle.textContent = "🎵 Zene be";
-        } else {
-            music.play();
-            music.volume = 0.08;
-            toggle.textContent = "🔇 Zene ki";
-        }
-        playing = !playing;
-    });
-    */
-
-    /* HERO SLIDESHOW */
+    /* HERO SLIDESHOW – kattintásra vált */
     const slides = Array.from(document.querySelectorAll(".hero-slide"));
     const dots = Array.from(document.querySelectorAll(".hero-dot"));
+    const nextBtn = document.querySelector(".hero-next");
 
-    if (slides.length && dots.length && slides.length === dots.length) {
+    if (slides.length) {
         let current = 0;
-        let timer = null;
 
         function showSlide(i) {
+            // régi állapot törlése
             slides[current].classList.remove("active");
-            dots[current].classList.remove("active");
+            if (dots[current]) {
+                dots[current].classList.remove("active");
+            }
 
             current = i;
 
+            // új állapot
             slides[current].classList.add("active");
-            dots[current].classList.add("active");
-        }
-
-        const slides = Array.from(document.querySelectorAll(".hero-slide"));
-        const dots = Array.from(document.querySelectorAll(".hero-dot"));
-        
-        if (slides.length && dots.length && slides.length === dots.length) {
-            let current = 0;
-        
-            function showSlide(i) {
-                slides[current].classList.remove("active");
-                dots[current].classList.remove("active");
-        
-                current = i;
-        
-                slides[current].classList.add("active");
+            if (dots[current]) {
                 dots[current].classList.add("active");
             }
-        
-            // ➤ DOT-okra kattintás (marad)
+        }
+
+        // induló állapot
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
+        showSlide(0);
+
+        // pöttyre kattintás (ha akarod használni)
+        if (dots.length === slides.length) {
             dots.forEach((dot, i) => {
-                dot.addEventListener("click", () => {
+                dot.addEventListener("click", (e) => {
+                    e.stopPropagation(); // ne lője el a slide kattintást
                     showSlide(i);
                 });
             });
-        
-            // ➤ SLIDE-ra kattintás → Következő slide
-            slides.forEach((slide) => {
-                slide.addEventListener("click", () => {
-                    const next = (current + 1) % slides.length;
-                    showSlide(next);
-                });
-            });
-        
-            // Kezdő slide
-            showSlide(0);
         }
 
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener("click", () => {
-                clearInterval(timer);
-                showSlide(i);
-                startSlider();
+        // slide-ra katt → következő
+        slides.forEach((slide) => {
+            slide.addEventListener("click", () => {
+                const next = (current + 1) % slides.length;
+                showSlide(next);
             });
         });
 
-        // induló állapot
-        slides[0].classList.add("active");
-        dots[0].classList.add("active");
-        startSlider();
+        // „Következő téma” gomb
+        if (nextBtn) {
+            nextBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const next = (current + 1) % slides.length;
+                showSlide(next);
+            });
+        }
     }
 
     /* Lebegő kontakt widget (panel nyit/zár) */
