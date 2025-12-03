@@ -587,3 +587,17 @@ section p {
 .hero-next:active {
     transform: translateX(-50%) scale(0.97);
 }
+.card {
+    background: var(--surface);
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
+}
+
