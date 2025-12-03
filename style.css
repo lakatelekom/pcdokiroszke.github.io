@@ -219,11 +219,13 @@ nav {
 
 .hero-slides {
     margin-top: 18px;
-    padding: 14px 14px 12px;
+    padding: 14px 14px 40px; /* alul kicsit több hely a gombnak */
     background: #f9fafb;
     border-radius: 18px;
     border: 1px solid var(--border-soft);
+    position: relative;      /* EZ KELL a hero-next abszolút pozicionálásához */
 }
+
 
 /* alapból minden slide rejtve */
 .hero-slide {
