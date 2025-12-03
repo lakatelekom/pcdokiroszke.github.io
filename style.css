@@ -308,30 +308,20 @@ section p {
 
 .rolam-wrap {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
-    position: relative;
 }
 
 .rolam-photo {
-    width: 130px;
-    height: auto;
-    border-radius: 12px;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
-    user-select: none;
+    width: 260px;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
     object-fit: cover;
 }
 
-.rolam-wrap p {
-    flex: 1;
-    font-size: 1.05rem;
-    line-height: 1.65;
-}
 
 /* SZOLGÁLTATÁSOK */
 
