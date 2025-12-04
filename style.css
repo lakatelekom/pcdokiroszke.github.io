@@ -724,4 +724,8 @@ section p {
     margin-top: 0.3rem;              /* kevesebb hely a menü előtt */
   }
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;  /* sose kelljen oldalra húzni */
+}
 
