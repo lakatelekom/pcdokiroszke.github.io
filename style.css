@@ -690,3 +690,38 @@ section p {
         padding: 16px 12px 50px;
     }
 }
+/* Mobil finomhangolás, hogy minden elférjen egy kijelzőn */
+@media (max-width: 480px) {
+
+  .hero-header {
+    padding: 1.2rem 1.2rem 0.4rem;   /* kevesebb függőleges tér */
+  }
+
+  .hero-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;               /* picit kisebb cím */
+    margin: 0;
+  }
+
+  .hero-badge {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  #brand-sub,
+  .hero-sub {
+    font-size: 0.95rem;              /* kicsit kisebb szöveg */
+    line-height: 1.3;
+    margin: 0.3rem 0 0.6rem;
+  }
+
+  .hero-tabs {
+    margin-top: 0.3rem;              /* kevesebb hely a menü előtt */
+  }
+}
+
