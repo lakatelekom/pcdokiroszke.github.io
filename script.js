@@ -122,4 +122,18 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+            // --- Telefon összeállítása ---
+        const tel = "+36 30 570 1844";
+        document.getElementById("tel-link").textContent = tel;
+        document.getElementById("tel-link").href = "tel:+36305701844";
+        
+        // --- E-mail cím botvédetten ---
+        const user = "laszlo.katona.hu";
+        const domain = "gmail.com";
+        const email = user + "@" + domain;
+        
+        const mailEl = document.getElementById("mail-link");
+        mailEl.textContent = email;
+        mailEl.href = "mailto:" + email;
+
 });
