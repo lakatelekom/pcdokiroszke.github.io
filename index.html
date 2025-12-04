@@ -261,23 +261,24 @@
         <!-- KAPCSOLAT -->
         <section id="kapcsolat" class="contact-section">
             <h2 class="section-title">Kapcsolat</h2>
-        
-            <div class="contact-card">
-                <p class="contact-row">
-                    <span class="contact-label">Telefon:</span>
-                    <a href="tel:+36305701844" class="contact-link">+36 30 570 1844</a>
-                </p>
-        
-                <p class="contact-row">
-                    <span class="contact-label">E-mail:</span>
-                    <a href="mailto:laszlo.katona.hu@gmail.com" class="contact-link">
-                        laszlo.katona.hu@gmail.com
-                    </a>
-                </p>
-        
-                <p class="contact-note">
-                    Röszkén és környékén helyszíni kiszállással, megbeszélés szerint.
-                </p>
+
+             <div class="contact-card">
+
+        <!-- TELEFON (JS állítja össze, botok nem látják) -->
+        <p class="contact-row">
+            <span class="contact-label">Telefon:</span>
+            <a id="tel-link" class="contact-link"></a>
+        </p>
+
+        <!-- EMAIL (szétszedve + JS állítja össze) -->
+        <p class="contact-row">
+            <span class="contact-label">E-mail:</span>
+            <a id="mail-link" class="contact-link"></a>
+        </p>
+
+        <p class="contact-note">
+            Röszkén és környékén helyszíni kiszállással, megbeszélés szerint.
+        </p>
             </div>
         </section>
 
