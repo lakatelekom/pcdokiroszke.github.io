@@ -749,12 +749,17 @@ html, body {
 }
 .arak-sub {
     text-align: center;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: #6b7280;
-    margin-top: -10px; 
-    margin-bottom: 22px;
-    line-height: 1.5;
+    margin-top: -4px;
+    margin-bottom: 26px;
+    line-height: 1.45;
+
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 
 
