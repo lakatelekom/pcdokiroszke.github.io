@@ -133,9 +133,8 @@ body::after {
     transition: opacity 0.25s ease;
     cursor: default;
 
-    /* új dolgok: */
-    max-width: 26ch;      /* ne legyen túl hosszú sor */
-    min-height: 2.8em;    /* kb. 2–3 sornyi hely fixen, így nem ugrál a magasság */
+    max-width: 26ch;
+    min-height: 2.8em;
     line-height: 1.35;
 }
 
@@ -188,18 +187,20 @@ nav {
     color: var(--accent);
 }
 
-/* HERO BLOKK */
+/* ===== HERO BLOKK – VÉGLEGES, KITAKARÍTOTT VERZIÓ ===== */
 
 .hero {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
     gap: 28px;
-    background: var(--surface);
-    border-radius: 24px;
-    padding: 26px;
-    border: 1px solid var(--border-soft);
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
+
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 22px;
+    padding: 32px 24px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+
     margin-bottom: 40px;
+    align-items: stretch;
 }
 
 .hero h2 {
@@ -215,28 +216,22 @@ nav {
     line-height: 1.7;
 }
 
-.hero-img-wrap {
-    border: 1px solid var(--border-soft);
-    border-radius: 18px;
-    overflow: hidden;
-}
+/* bal oldal – slider oszlop */
 
-.hero-img-wrap img {
-    width: 100%;
-    display: block;
+.hero-text {
+    display: flex;
+    flex-direction: column;
 }
-
-/* HERO SLIDER */
 
 .hero-slides {
     margin-top: 18px;
-    padding: 14px 14px 40px; /* alul kicsit több hely a gombnak */
+    padding: 14px 14px 40px;
     background: #f9fafb;
     border-radius: 18px;
     border: 1px solid var(--border-soft);
-    position: relative;      /* EZ KELL a hero-next abszolút pozicionálásához */
+    position: relative;
+    flex: 1;
 }
-
 
 /* alapból minden slide rejtve */
 .hero-slide {
@@ -295,7 +290,55 @@ nav {
     background: #15803d;
 }
 
-/* SZEKCIÓK */
+/* "Következő téma" gomb */
+
+.hero-next {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 18px;
+    background: #15803d;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.hero-next:hover {
+    background: #0f632d;
+    transform: translateX(-50%) scale(1.04);
+}
+
+.hero-next:active {
+    transform: translateX(-50%) scale(0.97);
+}
+
+/* jobb oldal – kép oszlop */
+
+.hero-img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.hero-img-wrap img {
+    width: auto;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+/* ===== SZEKCIÓK ===== */
 
 section {
     margin-bottom: 42px;
@@ -333,7 +376,6 @@ section p {
     object-fit: cover;
 }
 
-
 /* SZOLGÁLTATÁSOK */
 
 .services {
@@ -349,6 +391,12 @@ section p {
     border-radius: 18px;
     border: 1px solid var(--border-soft);
     box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
 }
 
 .card h3 {
@@ -534,171 +582,6 @@ section p {
     transform: scale(0.97);
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 800px) {
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .hero-img-wrap {
-        order: -1;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-}
-
-@media (max-width: 900px) {
-    .rolam-wrap {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .rolam-photo {
-        display: none;
-    }
-}
-.hero-next {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 18px;
-    background: #15803d;
-    color: #fff;
-    border: none;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: background 0.2s, transform 0.2s;
-}
-
-.hero-next:hover {
-    background: #0f632d;
-    transform: translateX(-50%) scale(1.04);
-}
-
-.hero-next:active {
-    transform: translateX(-50%) scale(0.97);
-}
-.card {
-    background: var(--surface);
-    padding: 16px;
-    border-radius: 18px;
-    border: 1px solid var(--border-soft);
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
-    transition: transform 0.16s ease, box-shadow 0.16s ease;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
-}
-.rolam-section {
-    background: rgba(255, 255, 255, 0.55);
-    padding: 40px 20px;
-    border-radius: 22px;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-}
-/* HERO: mindkét oldal azonos magasságú legyen */
-.hero {
-    align-items: stretch;      /* ne középre, hanem nyújtva legyenek az oszlopok */
-}
-
-/* Bal oldal: a slide-doboz töltse ki a magasságot */
-.hero-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.hero-slides {
-    flex: 1;                   /* kitölti a rendelkezésre álló magasságot */
-}
-/* Jobb oldali nagy kép viselkedése */
-.hero-img-wrap {
-    display: flex;
-    align-items: stretch;
-    padding: 0;               /* nehogy belül plusz tér maradjon */
-}
-
-.hero-img-wrap img {
-    width: 100%;
-    height: 100%;             /* kitölti a rendelkezésre álló magasságot */
-    object-fit: cover;        /* a kép „rácsúszik”, nem hagy üres csíkot */
-}
-.hero {
-    padding: 20px 22px;
-}
-/* HERO – közös átlátszó buborék, mint a Rólam szekció */
-.hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
-    gap: 28px;
-
-    /* mint a .rolam-section */
-    background: rgba(255, 255, 255, 0.55);
-    border-radius: 22px;
-    padding: 32px 24px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-
-    margin-bottom: 40px;
-    align-items: stretch; /* a két oldal azonos magasságú */
-}
-
-/* bal oldal – a slide doboz kitölti a magasságot */
-.hero-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.hero-slides {
-    flex: 1;
-}
-
-/* jobb oldal – csak a kép, átlátszó háttérrel, ne legyen külön “doboz” */
-.hero-img-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-}
-
-/* kép magassága igazodik a bal oldali buborékhoz, de nem vágjuk, nem zoomoljuk */
-.hero-img-wrap img {
-    max-height: 100%;
-    width: 100%;
-    object-fit: contain;   /* nincs vágás, nincs torzítás */
-}
-/* ===== JOBB OLDALI HERO KÉP: MAXIMÁLT MAGASSÁG ===== */
-.hero-img-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background: transparent;
-    border: none;
-}
-
-.hero-img-wrap img {
-    width: auto;
-    height: auto;
-
-    max-height: 350px;      /* <<< EZZEL LESZ KISEBB A KÉP MAGASSÁGA */
-
-    object-fit: contain;    /* ne vágjon le semmit */
-    border-radius: 16px;
-}
 /* ===== KAPCSOLAT SZEKCIÓ – ÜVEGES KÁRTYA ===== */
 
 .contact-section {
@@ -711,12 +594,13 @@ section p {
     margin: 0 auto 10px;
     padding: 18px 22px;
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.75); /* kicsit áttetsző, mint a "Rólam" */
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(6px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
 }
 
 /* sorok: címke + érték egysoros elrendezés */
+
 .contact-row {
     display: flex;
     flex-wrap: wrap;
@@ -742,6 +626,7 @@ section p {
 }
 
 /* kis magyarázó szöveg alul */
+
 .contact-note {
     margin-top: 10px;
     font-size: 0.88rem;
@@ -749,15 +634,42 @@ section p {
     text-align: center;
 }
 
-/* mobilon minden középre törik szépen */
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+    .rolam-wrap {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .rolam-photo {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    /* FONTOS: NINCS order:-1, így a DOM sorrend marad:
+       elől a slider (hero-text), alatta a kép (hero-img-wrap) */
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
 @media (max-width: 600px) {
     .contact-row {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-}
-@media (max-width: 600px) {
+
     .topbar {
         flex-direction: column;
         align-items: flex-start;
@@ -770,14 +682,11 @@ section p {
 
     .brand-sub {
         font-size: 1rem;
-        max-width: 22ch;   /* még kicsit rövidebb sor mobilon */
-        min-height: 3.2em; /* még fixebb magasság a váltáshoz */
+        max-width: 22ch;
+        min-height: 3.2em;
     }
 
     .page {
         padding: 16px 12px 50px;
     }
 }
-
-
-
