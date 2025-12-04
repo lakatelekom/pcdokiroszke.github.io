@@ -713,12 +713,11 @@ section p {
     padding: 0.25rem 0.7rem;
   }
 
-  #brand-sub,
-  .hero-sub {
-    font-size: 0.95rem;              /* kicsit kisebb szöveg */
-    line-height: 1.3;
-    margin: 0.3rem 0 0.6rem;
-  }
+  #brand-sub {
+    font-weight: 700;
+    color: #000;           /* erősebb kontraszt */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15); /* finom mélység */
+}
 
   .hero-tabs {
     margin-top: 0.3rem;              /* kevesebb hely a menü előtt */
