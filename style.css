@@ -728,4 +728,24 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;  /* sose kelljen oldalra húzni */
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.hero,
+.hero-text,
+.hero-slides,
+.hero-img-wrap {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-slide img,
+.hero-img-wrap img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 
