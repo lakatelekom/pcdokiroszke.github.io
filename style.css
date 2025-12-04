@@ -747,5 +747,14 @@ html, body {
     height: auto;
     display: block;
 }
+.arak-sub {
+    text-align: center;
+    font-size: 0.92rem;
+    color: #6b7280;
+    margin-top: -10px; 
+    margin-bottom: 22px;
+    line-height: 1.5;
+}
+
 
 
