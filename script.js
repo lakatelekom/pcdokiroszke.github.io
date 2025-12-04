@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Kérlek, tölts ki minden mezőt!");
                 return;
             }
-              
+
             const subject = encodeURIComponent("Üzenet a PC Doki Röszke weboldalról");
             const body = encodeURIComponent(
                 "Név: " + name + "\n" +
@@ -21,11 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Üzenet:\n" + message
             );
 
-            window.location.href = "mailto:laszlo.katona.hu@gmail.com"
-                + "?subject=" + subject
-                + "&body=" + body;
+            window.location.href =
+                "mailto:laszlo.katona.hu@gmail.com" +
+                "?subject=" + subject +
+                "&body=" + body;
         });
- }
+    }
 
     /* Interaktív hero szöveg – váltakozó kérdések */
     const brandSub = document.getElementById("brand-sub");
@@ -54,9 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
         setInterval(showNextPhrase, 4000);
     }
 
-    // ... a slideshow + widget rész maradhat ugyanúgy ...
-});       
-
     /* HERO SLIDESHOW – kattintásra vált */
     const slides = Array.from(document.querySelectorAll(".hero-slide"));
     const dots = Array.from(document.querySelectorAll(".hero-dot"));
@@ -66,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let current = 0;
 
         function showSlide(i) {
-            // régi állapot törlése
             slides[current].classList.remove("active");
             if (dots[current]) {
                 dots[current].classList.remove("active");
@@ -74,29 +71,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
             current = i;
 
-            // új állapot
             slides[current].classList.add("active");
             if (dots[current]) {
                 dots[current].classList.add("active");
             }
         }
 
-        // induló állapot
         slides.forEach(s => s.classList.remove("active"));
         dots.forEach(d => d.classList.remove("active"));
         showSlide(0);
 
-        // pöttyre kattintás (ha akarod használni)
         if (dots.length === slides.length) {
             dots.forEach((dot, i) => {
                 dot.addEventListener("click", (e) => {
-                    e.stopPropagation(); // ne lője el a slide kattintást
+                    e.stopPropagation();
                     showSlide(i);
                 });
             });
         }
 
-        // slide-ra katt → következő
         slides.forEach((slide) => {
             slide.addEventListener("click", () => {
                 const next = (current + 1) % slides.length;
@@ -104,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // „Következő téma” gomb
         if (nextBtn) {
             nextBtn.addEventListener("click", (e) => {
                 e.stopPropagation();
