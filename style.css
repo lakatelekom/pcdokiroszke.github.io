@@ -130,6 +130,8 @@ body::after {
     margin: 4px 0 0;
     font-size: 0.9rem;
     color: var(--text-muted);
+    transition: opacity 0.25s ease;
+    cursor: default;
 }
 
 .brand-title-main {
