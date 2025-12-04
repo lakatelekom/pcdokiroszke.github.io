@@ -13,7 +13,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Kérlek, tölts ki minden mezőt!");
                 return;
             }
-                /* Interaktív hero szöveg – váltakozó kérdések */
+              
+            const subject = encodeURIComponent("Üzenet a PC Doki Röszke weboldalról");
+            const body = encodeURIComponent(
+                "Név: " + name + "\n" +
+                "Email: " + email + "\n\n" +
+                "Üzenet:\n" + message
+            );
+
+            window.location.href = "mailto:laszlo.katona.hu@gmail.com"
+                + "?subject=" + subject
+                + "&body=" + body;
+        });
+       /* Interaktív hero szöveg – váltakozó kérdések */
             const brandSub = document.getElementById("brand-sub");
         
             if (brandSub) {
@@ -39,20 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
                 // 4 másodpercenként vált
                 setInterval(showNextPhrase, 4000);
-            }
-
-
-            const subject = encodeURIComponent("Üzenet a PC Doki Röszke weboldalról");
-            const body = encodeURIComponent(
-                "Név: " + name + "\n" +
-                "Email: " + email + "\n\n" +
-                "Üzenet:\n" + message
-            );
-
-            window.location.href = "mailto:laszlo.katona.hu@gmail.com"
-                + "?subject=" + subject
-                + "&body=" + body;
-        });
+            }   
     }
 
     /* HERO SLIDESHOW – kattintásra vált */
