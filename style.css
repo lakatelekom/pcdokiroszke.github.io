@@ -597,5 +597,154 @@ section p {
     backdrop-filter: blur(6px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.06);
 }
+/* HERO: mindkét oldal azonos magasságú legyen */
+.hero {
+    align-items: stretch;      /* ne középre, hanem nyújtva legyenek az oszlopok */
+}
+
+/* Bal oldal: a slide-doboz töltse ki a magasságot */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-slides {
+    flex: 1;                   /* kitölti a rendelkezésre álló magasságot */
+}
+/* Jobb oldali nagy kép viselkedése */
+.hero-img-wrap {
+    display: flex;
+    align-items: stretch;
+    padding: 0;               /* nehogy belül plusz tér maradjon */
+}
+
+.hero-img-wrap img {
+    width: 100%;
+    height: 100%;             /* kitölti a rendelkezésre álló magasságot */
+    object-fit: cover;        /* a kép „rácsúszik”, nem hagy üres csíkot */
+}
+.hero {
+    padding: 20px 22px;
+}
+/* HERO – közös átlátszó buborék, mint a Rólam szekció */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+    gap: 28px;
+
+    /* mint a .rolam-section */
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 22px;
+    padding: 32px 24px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+
+    margin-bottom: 40px;
+    align-items: stretch; /* a két oldal azonos magasságú */
+}
+
+/* bal oldal – a slide doboz kitölti a magasságot */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-slides {
+    flex: 1;
+}
+
+/* jobb oldal – csak a kép, átlátszó háttérrel, ne legyen külön “doboz” */
+.hero-img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* kép magassága igazodik a bal oldali buborékhoz, de nem vágjuk, nem zoomoljuk */
+.hero-img-wrap img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: contain;   /* nincs vágás, nincs torzítás */
+}
+/* ===== JOBB OLDALI HERO KÉP: MAXIMÁLT MAGASSÁG ===== */
+.hero-img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.hero-img-wrap img {
+    width: auto;
+    height: auto;
+
+    max-height: 350px;      /* <<< EZZEL LESZ KISEBB A KÉP MAGASSÁGA */
+
+    object-fit: contain;    /* ne vágjon le semmit */
+    border-radius: 16px;
+}
+/* ===== KAPCSOLAT SZEKCIÓ – ÜVEGES KÁRTYA ===== */
+
+.contact-section {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.contact-card {
+    max-width: 560px;
+    margin: 0 auto 10px;
+    padding: 18px 22px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.75); /* kicsit áttetsző, mint a "Rólam" */
+    backdrop-filter: blur(6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
+}
+
+/* sorok: címke + érték egysoros elrendezés */
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin: 4px 0;
+    font-size: 0.98rem;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: #111827;
+}
+
+.contact-link {
+    color: #15803d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* kis magyarázó szöveg alul */
+.contact-note {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #4b5563;
+    text-align: center;
+}
+
+/* mobilon minden középre törik szépen */
+@media (max-width: 600px) {
+    .contact-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
 
 
