@@ -126,13 +126,19 @@ body::after {
     gap: 0.6rem;
 }
 
-.brand-sub {
+..brand-sub {
     margin: 4px 0 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
     transition: opacity 0.25s ease;
     cursor: default;
- }
+
+    /* új dolgok: */
+    max-width: 26ch;      /* ne legyen túl hosszú sor */
+    min-height: 2.8em;    /* kb. 2–3 sornyi hely fixen, így nem ugrál a magasság */
+    line-height: 1.35;
+}
+
 .fade-out {
     opacity: 0;
 }
