@@ -13,6 +13,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Kérlek, tölts ki minden mezőt!");
                 return;
             }
+                /* Interaktív hero szöveg – váltakozó kérdések */
+            const brandSub = document.getElementById("brand-sub");
+        
+            if (brandSub) {
+                const phrases = [
+                    "Lassú a géped vagy már el sem indul?",
+                    "Zajos, meleg, fagyogat a laptopod?",
+                    "Szaggat a net vagy eltűnik a WiFi?",
+                    "Nem tudod, mit érdemes fejleszteni vagy venni?"
+                ];
+        
+                let index = 0;
+                brandSub.textContent = phrases[index];
+        
+                function showNextPhrase() {
+                    index = (index + 1) % phrases.length;
+                    brandSub.classList.add("fade-out");
+        
+                    setTimeout(() => {
+                        brandSub.textContent = phrases[index];
+                        brandSub.classList.remove("fade-out");
+                    }, 220); // ennyi időre “elhalványul”
+                }
+        
+                // 4 másodpercenként vált
+                setInterval(showNextPhrase, 4000);
+            }
+
 
             const subject = encodeURIComponent("Üzenet a PC Doki Röszke weboldalról");
             const body = encodeURIComponent(
