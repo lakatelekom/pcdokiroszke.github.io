@@ -132,6 +132,9 @@ body::after {
     color: var(--text-muted);
     transition: opacity 0.25s ease;
     cursor: default;
+ }
+.fade-out {
+    opacity: 0;
 }
 
 .brand-title-main {
