@@ -32,28 +32,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const brandSub = document.getElementById("brand-sub");
 
     if (brandSub) {
-        const phrases = [
-            "Lassú a géped vagy már el sem indul?",
-            "Zajos, meleg, fagyogat a laptopod?",
-            "Szaggat a net vagy eltűnik a WiFi?",
-            "Nem tudod, mit érdemes fejleszteni vagy venni?"
-        ];
+    const phrases = [
+        "Lassú a géped<br>vagy már el sem indul?",
+        "Zajos, meleg,<br>fagyogat a laptopod?",
+        "Szaggat a net<br>vagy eltűnik a WiFi?",
+        "Nem tudod, mit érdemes<br>fejleszteni vagy venni?"
+    ];
 
-        let index = 0;
-        brandSub.textContent = phrases[index];
+    let index = 0;
+    brandSub.innerHTML = phrases[index];
 
-        function showNextPhrase() {
-            index = (index + 1) % phrases.length;
-            brandSub.classList.add("fade-out");
+    function showNextPhrase() {
+        index = (index + 1) % phrases.length;
+        brandSub.classList.add("fade-out");
 
-            setTimeout(() => {
-                brandSub.textContent = phrases[index];
-                brandSub.classList.remove("fade-out");
-            }, 220);
-        }
-
-        setInterval(showNextPhrase, 4000);
+        setTimeout(() => {
+            brandSub.innerHTML = phrases[index];
+            brandSub.classList.remove("fade-out");
+        }, 220);
     }
+
+    setInterval(showNextPhrase, 4000);
+}
+
 
     /* HERO SLIDESHOW – kattintásra vált */
     const slides = Array.from(document.querySelectorAll(".hero-slide"));
