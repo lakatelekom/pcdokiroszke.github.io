@@ -955,6 +955,27 @@ h2.section-title{
   margin-bottom: 10px;
   background: rgba(255,255,255,0.04);
 }
+/* ===== LOGÓ MÉRET FINOMHANGOLÁS ===== */
+
+.brand-logo {
+  max-height: 44px;      /* EZ A LÉNYEG */
+  width: auto;
+  display: block;
+}
+
+/* desktopon picit nagyobb lehet */
+@media (min-width: 900px) {
+  .brand-logo {
+    max-height: 52px;
+  }
+}
+
+/* mobilon kisebb */
+@media (max-width: 600px) {
+  .brand-logo {
+    max-height: 38px;
+  }
+}
 
 
 
