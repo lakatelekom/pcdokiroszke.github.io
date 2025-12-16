@@ -758,6 +758,194 @@ html, body {
     margin-left: auto;
     margin-right: auto;
 }
+/* =========================
+   PC-DOKI TECH OVERRIDE
+   (illeszd a style.css legaljára)
+   ========================= */
+
+:root{
+  --tech-bg0:#061425;
+  --tech-bg1:#0a2440;
+  --tech-card: rgba(255,255,255,.07);
+  --tech-card2: rgba(255,255,255,.10);
+  --tech-stroke: rgba(255,255,255,.14);
+  --tech-text:#eaf2ff;
+  --tech-muted: rgba(234,242,255,.78);
+  --tech-yellow:#facc15;     /* CTA sárga */
+  --tech-yellow2:#f59e0b;
+  --tech-blue:#0ea5e9;
+}
+
+/* háttér: kék tech + “áramkör” feeling */
+body{
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(14,165,233,.28), transparent 55%),
+              radial-gradient(1000px 600px at 100% 20%, rgba(250,204,21,.16), transparent 55%),
+              linear-gradient(180deg, var(--tech-bg1), var(--tech-bg0));
+  color: var(--tech-text);
+}
+
+/* kapcsold le a felhő + fű rétegeket */
+body::before, body::after { display:none !important; }
+.clouds{ display:none !important; }
+
+/* oldalkereten belül “fényesebb” panel */
+.page{
+  padding-top: 18px;
+}
+
+/* TOPBAR: üveges sáv */
+.topbar{
+  padding: 14px 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--tech-stroke);
+  box-shadow: 0 18px 50px rgba(0,0,0,.28);
+}
+
+/* logó/cím */
+.brand-title-main{
+  color: #eaf2ff !important;
+  letter-spacing: .04em;
+  text-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.brand-title-pill{
+  background: linear-gradient(180deg, var(--tech-yellow), var(--tech-yellow2)) !important;
+  border: 1px solid rgba(0,0,0,.15) !important;
+  color: #111827 !important;
+  box-shadow: 0 10px 24px rgba(250,204,21,.18);
+}
+.brand-sub{
+  color: var(--tech-muted) !important;
+}
+
+/* NAV: sötét kapszula */
+.nav-links{
+  background: rgba(0,0,0,.18) !important;
+  border: 1px solid var(--tech-stroke) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.25) !important;
+}
+.nav-links a{
+  color: rgba(234,242,255,.82) !important;
+}
+.nav-links a:hover{
+  color: var(--tech-yellow) !important;
+}
+
+/* HERO: kártya + “tech glow” */
+.hero{
+  background: rgba(255,255,255,.06) !important;
+  border: 1px solid var(--tech-stroke);
+  box-shadow: 0 22px 70px rgba(0,0,0,.35);
+  overflow: hidden;
+  position: relative;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(900px 380px at 20% 20%, rgba(14,165,233,.22), transparent 60%),
+              radial-gradient(900px 380px at 80% 10%, rgba(250,204,21,.14), transparent 60%);
+  pointer-events:none;
+}
+.hero h2{ color: var(--tech-yellow) !important; }
+.hero p{ color: var(--tech-muted) !important; }
+
+/* slide panel: sötétebb üveg */
+.hero-slides{
+  background: rgba(0,0,0,.18) !important;
+  border: 1px solid var(--tech-stroke) !important;
+}
+.hero-slide h3{ color: #eaf2ff !important; }
+.hero-slide p{ color: var(--tech-muted) !important; }
+.hero-slide img{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+/* dotok + gomb */
+.hero-dot{ background: rgba(255,255,255,.22) !important; }
+.hero-dot.active{ background: var(--tech-yellow) !important; }
+
+.hero-next{
+  background: linear-gradient(180deg, var(--tech-yellow), var(--tech-yellow2)) !important;
+  color: #111827 !important;
+  box-shadow: 0 16px 32px rgba(0,0,0,.28);
+}
+.hero-next:hover{
+  filter: brightness(1.05);
+}
+
+/* jobb oldali kép kapjon keretet */
+.hero-img-wrap img{
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+
+/* szekciócímek */
+h2.section-title{
+  color: #eaf2ff;
+  text-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+/* szolgáltatás kártyák */
+.card{
+  background: var(--tech-card) !important;
+  border: 1px solid var(--tech-stroke) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.25) !important;
+}
+.card h3{ color: var(--tech-yellow) !important; }
+.card p{ color: var(--tech-muted) !important; }
+
+/* árak doboz */
+.contact-box{
+  background: var(--tech-card) !important;
+  border: 1px solid var(--tech-stroke) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.25) !important;
+}
+.arak-sub{ color: rgba(234,242,255,.7) !important; }
+
+/* kapcsolat kártya */
+.contact-card{
+  background: rgba(255,255,255,.06) !important;
+  border: 1px solid var(--tech-stroke);
+  box-shadow: 0 20px 55px rgba(0,0,0,.35);
+}
+.contact-label{ color:#eaf2ff !important; }
+.contact-link{ color: var(--tech-yellow) !important; }
+
+/* footer */
+.clean-footer{
+  background: rgba(0,0,0,.22) !important;
+  border-top: 1px solid var(--tech-stroke) !important;
+  color: rgba(234,242,255,.75) !important;
+}
+.clean-footer .small{ color: rgba(234,242,255,.55) !important; }
+
+/* lebegő widget passzoljon a témához */
+#contact-toggle{
+  background: linear-gradient(180deg, var(--tech-blue), #2563eb) !important;
+}
+.contact-panel{
+  background: rgba(10,36,64,.92) !important;
+  border: 1px solid var(--tech-stroke) !important;
+}
+.contact-panel p{ color: rgba(234,242,255,.8) !important; }
+.contact-btn.phone{
+  background: linear-gradient(180deg, #22c55e, #15803d) !important;
+}
+.contact-btn.messenger{
+  background: linear-gradient(180deg, #0ea5e9, #2563eb) !important;
+}
+.contact-btn.share{
+  background: linear-gradient(180deg, #60a5fa, #1d4ed8) !important;
+}
+
+/* mobilon is maradjon szép */
+@media (max-width: 800px){
+  .topbar{ padding: 12px; }
+  .hero{ padding: 18px; }
+}
+
 
 
 
