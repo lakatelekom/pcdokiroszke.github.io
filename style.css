@@ -1114,7 +1114,7 @@ h2.section-title{
 /* --- MOBILON VISSZAFOGOTTABB --- */
 @media (max-width: 600px){
   #brand-sub::before{
-    animation-duration: 12s;
+    animation-duration: 5s;
   }
 }
 
