@@ -33,10 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (brandSub) {
     const phrases = [
-        "Lassú a géped<br>vagy már el sem indul?",
+        "Lassú a géped, vagy már el sem indul?",
         "Zajos, meleg, gyakran lefagy a laptopod?",
         "Akadozik a net, vagy gyenge a WiFi-jel?",
-        "Nem tudod, mit lenne érdemes olcsón fejleszteni vagy lecserélni?"
+        "Fejleszteni szeretnél, de nem tudod mit?",
+        "S.O.S rendszergazdát keresel a cégednek?",
+        "S.O.S weboldalra van szükséged?",
+        "S.O.S adatmentésre kell?",
+        
     ];
 
     let index = 0;
