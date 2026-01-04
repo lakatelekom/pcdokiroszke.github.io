@@ -1117,6 +1117,21 @@ h2.section-title{
     animation-duration: 5s;
   }
 }
+.rolam-photo {
+    width: 230px;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    filter: drop-shadow(0 12px 26px rgba(0,0,0,0.28));
+}
+@media (max-width: 900px) {
+    .rolam-photo {
+        width: 160px;
+        margin-bottom: 24px;
+    }
+}
+
 
 
 
