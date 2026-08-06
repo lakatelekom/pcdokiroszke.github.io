@@ -1,0 +1,664 @@
+/* ================================================================
+   MÉRNÖKI / MODERN STÍLUS - MOBIL-FIRST
+   ================================================================ */
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0b0e12;
+  color: #e8edf2;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3, h4 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h2.section-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #667788;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 2rem;
+}
+
+/* ---------- TOPBAR ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: #e8edf2;
+}
+
+.brand-title span {
+  color: #f59e0b;
+}
+
+.brand-sub {
+  font-size: 0.8rem;
+  color: #667788;
+  margin-top: 0.1rem;
+  letter-spacing: 0.02em;
+}
+
+.topbar-tag {
+  font-size: 0.7rem;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 222, 128, 0.12);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ---------- NAV ---------- */
+nav {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #667788;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 450;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #f59e0b;
+  border-bottom-color: #f59e0b;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: 1rem 0 3rem;
+}
+
+.hero-text {
+  order: 2;
+}
+
+.hero-visual {
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visual-placeholder {
+  width: 100%;
+  max-width: 380px;
+}
+
+.hero-visual-placeholder svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.hero h1 .highlight {
+  color: #f59e0b;
+}
+
+.hero-lead {
+  color: #8899aa;
+  font-size: 1rem;
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- HERO SLIDES ---------- */
+.hero-slides {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.hero-slide {
+  display: none;
+  animation: slideFade 0.35s ease;
+}
+
+.hero-slide.active {
+  display: block;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-slide h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #f59e0b;
+}
+
+.hero-slide p {
+  font-size: 0.92rem;
+  color: #8899aa;
+  max-width: 100%;
+  line-height: 1.6;
+}
+
+.hero-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hero-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.hero-dot {
+  width: 28px;
+  height: 3px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.3s;
+  padding: 0;
+}
+
+.hero-dot.active {
+  background: #f59e0b;
+}
+
+.hero-next {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #667788;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.hero-next:hover {
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+/* ---------- RÓLAM ---------- */
+.rolam-section {
+  padding: 2rem 0 1rem;
+}
+
+.rolam-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.rolam-text p {
+  color: #8899aa;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.rolam-text p strong {
+  color: #e8edf2;
+}
+
+.rolam-avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.rolam-avatar-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.06);
+  border: 2px solid rgba(245, 158, 11, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #f59e0b;
+}
+
+/* ---------- SZOLGÁLTATÁSOK ---------- */
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.service-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 0.9rem 0.9rem 1rem;
+  transition: border-color 0.2s;
+}
+
+.service-item:hover {
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.service-item .icon {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.service-item h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e8edf2;
+}
+
+.service-item p {
+  font-size: 0.75rem;
+  color: #667788;
+  margin-top: 0.1rem;
+}
+
+/* ---------- ÁRAK ---------- */
+.arak-sub {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #667788;
+  margin: -0.5rem 0 1.5rem;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.1rem;
+}
+
+.price-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  gap: 0.5rem 1rem;
+}
+
+.price-row .label {
+  color: #8899aa;
+  font-size: 0.85rem;
+}
+
+.price-row .value {
+  color: #e8edf2;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.price-row .note {
+  grid-column: 1 / -1;
+  font-size: 0.7rem;
+  color: #556677;
+  font-weight: 400;
+  margin-top: -0.2rem;
+  padding-left: 0.2rem;
+}
+
+.price-row.highlight {
+  background: rgba(74, 222, 128, 0.04);
+  border-radius: 6px;
+  border-bottom: none;
+  margin-top: 0.3rem;
+}
+
+.price-row.highlight .label {
+  color: #4ade80;
+}
+
+.price-row.highlight .value {
+  color: #4ade80;
+}
+
+/* ---------- KAPCSOLAT ---------- */
+.contact-section {
+  padding: 1rem 0;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.5rem 0;
+}
+
+.contact-row .label {
+  color: #556677;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-row .value {
+  color: #e8edf2;
+  font-size: 1rem;
+}
+
+.contact-row .value a {
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+.contact-row .value a:hover {
+  text-decoration: underline;
+}
+
+.contact-note {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #667788;
+}
+
+/* ---------- FLOATING WIDGET ---------- */
+.floating-contact-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+}
+
+#contact-toggle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(16, 20, 28, 0.92);
+  backdrop-filter: blur(12px);
+  color: #e8edf2;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact-toggle:hover {
+  border-color: #f59e0b;
+}
+
+.contact-panel {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 190px;
+  background: rgba(16, 20, 28, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 0.75rem;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.contact-panel.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.contact-panel p {
+  font-size: 0.65rem;
+  color: #556677;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 450;
+  margin-bottom: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.contact-btn.phone {
+  background: rgba(34, 197, 94, 0.08);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.1);
+}
+
+.contact-btn.messenger {
+  background: rgba(59, 130, 246, 0.08);
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.1);
+}
+
+.contact-btn.share {
+  background: rgba(245, 158, 11, 0.06);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.08);
+}
+
+.contact-btn:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ---------- FOOTER ---------- */
+.clean-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  text-align: center;
+  font-size: 0.75rem;
+  color: #556677;
+  line-height: 1.8;
+}
+
+.clean-footer .small {
+  font-size: 0.7rem;
+  color: #445566;
+}
+
+.clean-footer a {
+  color: #667788;
+  text-decoration: none;
+}
+
+.clean-footer a:hover {
+  color: #f59e0b;
+}
+
+/* ================================================================
+   TABLET
+   ================================================================ */
+@media (min-width: 640px) {
+  .services {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .price-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1.5rem;
+  }
+
+  .price-row {
+    grid-template-columns: 1fr auto;
+    padding: 0.5rem 0;
+  }
+
+  .price-row .note {
+    grid-column: 1 / -1;
+  }
+
+  .contact-row {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+
+  .contact-row .label {
+    min-width: 80px;
+    font-size: 0.7rem;
+  }
+}
+
+/* ================================================================
+   DESKTOP
+   ================================================================ */
+@media (min-width: 900px) {
+  .container {
+    padding: 1.5rem 2.5rem 3rem;
+  }
+
+  .hero {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    padding: 2rem 0 4rem;
+    gap: 3rem;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-visual {
+    order: 2;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-lead {
+    font-size: 1.05rem;
+  }
+
+  .rolam-wrap {
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  .rolam-avatar-circle {
+    width: 180px;
+    height: 180px;
+    font-size: 3.5rem;
+  }
+
+  .services {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+  }
+
+  .service-item {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* ================================================================
+   ANIMÁCIÓK
+   ================================================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero,
+.rolam-section,
+#szolgaltatasok,
+#arak,
+.contact-section {
+  animation: fadeUp 0.5s ease forwards;
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Doki Röszke – Mérnöki számítógépszerviz</title>
+
+    <meta name="description" content="PC Doki Röszke – laptop és PC javítás, gyorsítás, WiFi és otthoni hálózat beállítás, gamer PC építés, helyszíni kiszállással.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PC Doki Röszke">
+    <meta property="og:description" content="Lassú a géped vagy a neted? Segítek Röszkén és környékén.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pcdokiroszke.hu">
+    <meta property="og:image" content="https://pcdokiroszke.hu/doki1.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,450;14..32,500;14..32,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== LEBEGŐ KONTAKT WIDGET ===== -->
+    <div class="floating-contact-widget">
+        <button id="contact-toggle" aria-label="Kapcsolat">✉</button>
+        <div class="contact-panel" id="contact-panel">
+            <p>Kapcsolat</p>
+            <a href="tel:+36305701844" class="contact-btn phone">📞 Hívás</a>
+            <a href="https://m.me/pcdokiroszke" target="_blank" rel="noopener" class="contact-btn messenger">💬 Messenger</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpcdokiroszke.hu" target="_blank" class="contact-btn share">↗ Megosztom</a>
+        </div>
+    </div>
+
+    <!-- ===== OLDAL ===== -->
+    <div class="container">
+
+        <!-- ===== TOPBAR ===== -->
+        <header class="topbar">
+            <div>
+                <div class="brand-title">PC<span>Doki</span></div>
+                <div class="brand-sub" id="brand-sub">Röszke · Mérnöki számítógépszerviz</div>
+            </div>
+            <div class="topbar-meta">
+                <span class="topbar-tag">⚡ helyszíni kiszállás</span>
+            </div>
+        </header>
+
+        <!-- ===== NAV ===== -->
+        <nav>
+            <div class="nav-links">
+                <a href="#rolam">Rólam</a>
+                <a href="#szolgaltatasok">Szolgáltatások</a>
+                <a href="#arak">Árak</a>
+                <a href="#kapcsolat">Kapcsolat</a>
+            </div>
+        </nav>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Probléma van a <span class="highlight">gépeddel</span>?</h1>
+                <p class="hero-lead">Műszaki diagnosztika, javítás, optimalizálás – Röszkén és környékén.</p>
+
+                <div class="hero-slides" id="heroSlides">
+                    <div class="hero-slide active" data-index="0">
+                        <h3>💻 Lassú a géped?</h3>
+                        <p>Nem kell rögtön újat venni. Tisztítással, SSD-vel, memóriabővítéssel éveket nyerhetsz.</p>
+                    </div>
+                    <div class="hero-slide" data-index="1">
+                        <h3>🌐 Lassú a neted?</h3>
+                        <p>Router beállítás, csatornaváltás, firmware frissítés – kiderítem, hol a gond.</p>
+                    </div>
+                    <div class="hero-slide" data-index="2">
+                        <h3>📶 Gyenge a WiFi?</h3>
+                        <p>Vastag falak, rosszul beállított eszközök – megoldom a lefedettségi problémákat.</p>
+                    </div>
+                    <div class="hero-slide" data-index="3">
+                        <h3>👨‍👩‍👧 Szülői felügyelet?</h3>
+                        <p>Biztonságos netezés gyerekeknek – időkorlátok, tartalomszűrés beállítása.</p>
+                    </div>
+
+                    <div class="hero-controls">
+                        <div class="hero-dots">
+                            <button class="hero-dot active" data-index="0" aria-label="1. dia"></button>
+                            <button class="hero-dot" data-index="1" aria-label="2. dia"></button>
+                            <button class="hero-dot" data-index="2" aria-label="3. dia"></button>
+                            <button class="hero-dot" data-index="3" aria-label="4. dia"></button>
+                        </div>
+                        <button class="hero-next" id="heroNext">Következő →</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-visual-placeholder">
+                    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="80" width="300" height="200" rx="12" stroke="#f59e0b" stroke-width="2" opacity="0.3"/>
+                        <rect x="100" y="120" width="200" height="120" rx="4" fill="#f59e0b" opacity="0.08"/>
+                        <circle cx="200" cy="320" r="40" stroke="#f59e0b" stroke-width="2" opacity="0.2"/>
+                        <circle cx="200" cy="320" r="20" fill="#f59e0b" opacity="0.12"/>
+                        <line x1="160" y1="80" x2="240" y2="80" stroke="#f59e0b" stroke-width="2" opacity="0.15"/>
+                        <line x1="160" y1="280" x2="240" y2="280" stroke="#f59e0b" stroke-width="2" opacity="0.15"/>
+                        <rect x="170" y="60" width="60" height="8" rx="4" fill="#f59e0b" opacity="0.08"/>
+                        <rect x="180" y="300" width="40" height="8" rx="4" fill="#f59e0b" opacity="0.08"/>
+                        <text x="200" y="180" text-anchor="middle" fill="#8899aa" font-size="14" font-family="Inter, sans-serif" opacity="0.4">⚡</text>
+                        <text x="200" y="205" text-anchor="middle" fill="#667788" font-size="12" font-family="Inter, sans-serif" opacity="0.3">PC DOKI</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RÓLAM ===== -->
+        <section id="rolam" class="rolam-section">
+            <h2 class="section-title">Rólam</h2>
+            <div class="rolam-wrap">
+                <div class="rolam-text">
+                    <p>
+                        <strong>Katona László</strong> – informatikai rendszergazda és hálózati szakember.
+                    </p>
+                    <p>
+                        Közel 10 éve foglalkozom telekommunikációs rendszerek üzemeltetésével, vezeték nélküli hálózatok telepítésével, WiFi optimalizálással, PC-k és laptopok szakszerű szervizelésével. Gamer és irodai PC-k összeállítását és bővítését is vállalom, személyre szabottan.
+                    </p>
+                    <p>
+                        Ha gyorsabb, stabilabb rendszert szeretnél – vagy számítógéppel kapcsolatos problémáid vannak – jó helyen jársz.
+                    </p>
+                </div>
+                <div class="rolam-avatar">
+                    <div class="rolam-avatar-circle">
+                        <span>⚡</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SZOLGÁLTATÁSOK ===== -->
+        <section id="szolgaltatasok">
+            <h2 class="section-title">Szolgáltatások</h2>
+            <div class="services">
+                <div class="service-item">
+                    <span class="icon">💻</span>
+                    <h3>PC-Laptop javítás</h3>
+                    <p>Tisztítás, gyorsítás, szerviz</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">🖥</span>
+                    <h3>PC építés, tuning</h3>
+                    <p>Új gép vagy régi felgyorsítása</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">💾</span>
+                    <h3>Adatmentés</h3>
+                    <p>Fotók, dokumentumok helyreállítása</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">📡</span>
+                    <h3>Internet &amp; WiFi</h3>
+                    <p>Router beállítás, jelerősség javítás</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">🛠</span>
+                    <h3>Windows telepítés</h3>
+                    <p>Tiszta telepítés, driverek, frissítések</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">🖨</span>
+                    <h3>Nyomtató, szkenner</h3>
+                    <p>Telepítés, hálózati megosztás</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">🌐</span>
+                    <h3>Weboldal készítés</h3>
+                    <p>Modern, gyors, mobilbarát honlapok</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">📣</span>
+                    <h3>Online marketing</h3>
+                    <p>Hirdetések, SEO, közösségi média</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ÁRAK ===== -->
+        <section id="arak">
+            <h2 class="section-title">Árak</h2>
+            <p class="arak-sub">Minden ár alanyi adómentes (AAM), tájékoztató jellegű.</p>
+
+            <div class="price-grid">
+                <div class="price-row">
+                    <span class="label">Diagnosztika</span>
+                    <span class="value">4 000 Ft-tól</span>
+                    <span class="note">hiba feltárása, javítási javaslat</span>
+                </div>
+                <div class="price-row">
+                    <span class="label">Windows telepítés</span>
+                    <span class="value">10 000 Ft-tól</span>
+                    <span class="note">tiszta telepítés, driverek, alap programok</span>
+                </div>
+                <div class="price-row">
+                    <span class="label">Tisztítás + újrapasztázás</span>
+                    <span class="value">8 000 Ft-tól</span>
+                    <span class="note">pormentesítés, hűtés karbantartása</span>
+                </div>
+                <div class="price-row">
+                    <span class="label">SSD-re váltás</span>
+                    <span class="value">12 000 Ft-tól</span>
+                    <span class="note">SSD külön díj, mérettől függően</span>
+                </div>
+                <div class="price-row">
+                    <span class="label">Beltéri LAN hálózat</span>
+                    <span class="value">20 000 Ft-tól</span>
+                    <span class="note">anyagköltség nélkül, tervezéssel</span>
+                </div>
+                <div class="price-row">
+                    <span class="label">Helyszíni hibakeresés</span>
+                    <span class="value">10 000 Ft-tól</span>
+                    <span class="note">WiFi, router, lassú net diagnosztika</span>
+                </div>
+                <div class="price-row">
+                    <span class="label">Gamer PC építés (új)</span>
+                    <span class="value">25 000 Ft-tól</span>
+                    <span class="note">komponenseket beszerezheted te is</span>
+                </div>
+                <div class="price-row">
+                    <span class="label">Gamer PC építés (használt)</span>
+                    <span class="value">15 000 Ft-tól</span>
+                    <span class="note">teszteléssel, optimalizálással</span>
+                </div>
+                <div class="price-row">
+                    <span class="label">Weboldal készítés</span>
+                    <span class="value">49 000 Ft-tól</span>
+                    <span class="note">modern, gyors, mobilbarát</span>
+                </div>
+                <div class="price-row highlight">
+                    <span class="label">🚗 Kiszállás Röszkén belül</span>
+                    <span class="value">Ingyenes</span>
+                    <span class="note"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KAPCSOLAT ===== -->
+        <section id="kapcsolat" class="contact-section">
+            <h2 class="section-title">Kapcsolat</h2>
+            <div class="contact-card">
+                <div class="contact-row">
+                    <span class="label">Telefon</span>
+                    <span class="value"><a id="tel-link" class="contact-link"></a></span>
+                </div>
+                <div class="contact-row">
+                    <span class="label">E-mail</span>
+                    <span class="value"><a id="mail-link" class="contact-link"></a></span>
+                </div>
+                <div class="contact-row">
+                    <span class="label">Szolgáltatás</span>
+                    <span class="value">Röszke és környéke</span>
+                </div>
+                <p class="contact-note">Helyszíni kiszállással, megbeszélés szerint.</p>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="clean-footer">
+            <p>© 2025 PC Doki Röszke – Minden jog fenntartva.</p>
+            <p class="small">Az oldal nem használ sütiket és nem alkalmaz analitikai vagy marketing célú követőkódokat.</p>
+            <p class="small">Üzemeltető: Katona László e.v.</p>
+            <a href="adatkezeles.pdf" target="_blank" rel="noopener">Adatkezelési tájékoztató (PDF)</a>
+        </footer>
+
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="script.js"></script>
+</body>
+
+</html>
