@@ -1,5 +1,5 @@
 /* ================================================================
-   MÉRNÖKI / MODERN STÍLUS - MOBIL-FIRST
+   MÉRNÖKI / MODERN STÍLUS - HARMONIZÁLVA A PC DOKI KÉPPEL
    ================================================================ */
 
 /* ---------- RESET ---------- */
@@ -58,7 +58,7 @@ h2.section-title {
 
 .brand-title {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.03em;
   color: #e8edf2;
 }
@@ -72,6 +72,7 @@ h2.section-title {
   color: #667788;
   margin-top: 0.1rem;
   letter-spacing: 0.02em;
+  transition: opacity 0.25s ease;
 }
 
 .topbar-tag {
@@ -118,7 +119,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
-  padding: 1rem 0 3rem;
+  padding: 1rem 0 2rem;
 }
 
 .hero-text {
@@ -145,7 +146,7 @@ nav {
 
 .hero h1 {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.03em;
   margin-bottom: 0.75rem;
   line-height: 1.2;
@@ -193,7 +194,7 @@ nav {
 
 .hero-slide h3 {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.3rem;
   color: #f59e0b;
 }
@@ -249,6 +250,101 @@ nav {
 .hero-next:hover {
   border-color: #f59e0b;
   color: #f59e0b;
+}
+
+/* ---------- BRANDING BLOKK – PC DOKI PLÉH ---------- */
+.branding-block {
+  margin: 2rem 0 3rem;
+}
+
+.branding-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.branding-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(11, 14, 18, 0.95), rgba(11, 14, 18, 0.85));
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.branding-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
+}
+
+.branding-overlay {
+  padding: 1.5rem 1.5rem 2rem;
+  background: linear-gradient(180deg, rgba(11, 14, 18, 0.6), rgba(11, 14, 18, 0.95));
+}
+
+.branding-tagline {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.branding-highlight {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #f59e0b;
+  text-transform: uppercase;
+  background: rgba(245, 158, 11, 0.06);
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  border: 1px solid rgba(245, 158, 11, 0.08);
+  display: inline-block;
+}
+
+.branding-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.branding-feature {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 0.8rem 0.8rem 0.9rem;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.branding-feature:hover {
+  border-color: rgba(245, 158, 11, 0.15);
+}
+
+.branding-feature .bf-icon {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.branding-feature .bf-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e8edf2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.branding-feature .bf-desc {
+  display: block;
+  font-size: 0.7rem;
+  color: #667788;
+  margin-top: 0.1rem;
 }
 
 /* ---------- RÓLAM ---------- */
@@ -318,7 +414,7 @@ nav {
 
 .service-item h3 {
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #e8edf2;
 }
 
@@ -421,9 +517,11 @@ nav {
 .contact-row .value a {
   color: #f59e0b;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .contact-row .value a:hover {
+  color: #fbbf24;
   text-decoration: underline;
 }
 
@@ -519,6 +617,12 @@ nav {
   border-color: rgba(59, 130, 246, 0.1);
 }
 
+.contact-btn.facebook {
+  background: rgba(24, 119, 242, 0.08);
+  color: #4d8bf7;
+  border-color: rgba(24, 119, 242, 0.1);
+}
+
 .contact-btn.share {
   background: rgba(245, 158, 11, 0.06);
   color: #fbbf24;
@@ -549,6 +653,7 @@ nav {
 .clean-footer a {
   color: #667788;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .clean-footer a:hover {
@@ -556,9 +661,23 @@ nav {
 }
 
 /* ================================================================
-   TABLET
+   BRANDING BLOKK – RESZPONZÍV
    ================================================================ */
 @media (min-width: 640px) {
+  .branding-features {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .branding-overlay {
+    padding: 2rem 2.5rem;
+  }
+
+  .branding-highlight {
+    font-size: 1.3rem;
+    padding: 0.5rem 2rem;
+  }
+
   .services {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -620,6 +739,60 @@ nav {
     font-size: 1.05rem;
   }
 
+  /* Branding desktop */
+  .branding-card {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+
+  .branding-image {
+    padding: 2rem 1rem 2rem 2rem;
+    background: rgba(11, 14, 18, 0.6);
+  }
+
+  .branding-img {
+    max-height: 500px;
+  }
+
+  .branding-overlay {
+    padding: 2rem 2rem 2rem 1rem;
+    background: transparent;
+  }
+
+  .branding-features {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .branding-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: left;
+    padding: 0.6rem 1rem;
+  }
+
+  .branding-feature .bf-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .branding-feature .bf-label {
+    font-size: 0.7rem;
+    min-width: 70px;
+  }
+
+  .branding-feature .bf-desc {
+    font-size: 0.7rem;
+  }
+
+  .branding-tagline {
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+
   .rolam-wrap {
     grid-template-columns: 2fr 1fr;
     gap: 3rem;
@@ -656,6 +829,7 @@ nav {
 }
 
 .hero,
+.branding-block,
 .rolam-section,
 #szolgaltatasok,
 #arak,
