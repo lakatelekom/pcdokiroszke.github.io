@@ -8,28 +8,18 @@
 
     <meta name="description" content="PC Doki Röszke – laptop és PC javítás, gyorsítás, WiFi és otthoni hálózat beállítás, gamer PC építés, helyszíni kiszállással.">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="PC Doki Röszke">
-    <meta property="og:description" content="Lassú a géped vagy a neted? Segítek Röszkén és környékén.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pcdokiroszke.hu">
-    <meta property="og:image" content="https://pcdokiroszke.hu/doki1.jpg">
-
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Font (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,450;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 
-    <!-- Schema.org LocalBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "PC Doki Röszke",
-        "image": "https://pcdokiroszke.hu/doki1.jpg",
         "telephone": "+36 30 570 1844",
         "email": "laszlo.katona.hu@gmail.com",
         "address": {
@@ -38,10 +28,7 @@
             "addressCountry": "HU"
         },
         "url": "https://pcdokiroszke.hu",
-        "sameAs": [
-            "https://www.facebook.com/pcdokiroszke"
-        ],
-        "openingHours": "Mo-Fr 16:00-20:00"
+        "sameAs": ["https://www.facebook.com/pcdokiroszke"]
     }
     </script>
 </head>
@@ -51,9 +38,9 @@
     <!-- ===== LEBEGŐ KONTAKT WIDGET ===== -->
     <div class="floating-contact-widget">
         <button id="contact-toggle" aria-label="Kapcsolat">
-            <span id="toggle-icon">✉</span>
+            <span id="toggle-icon">✕</span>
         </button>
-        <div class="contact-panel" id="contact-panel">
+        <div class="contact-panel open" id="contact-panel">
             <p>📋 Gyors kapcsolat</p>
             <a href="tel:+36305701844" class="contact-btn phone">📞 Hívás</a>
             <a href="https://m.me/pcdokiroszke" target="_blank" rel="noopener" class="contact-btn messenger">💬 Messenger</a>
@@ -65,14 +52,13 @@
     <!-- ===== OLDAL ===== -->
     <div class="container">
 
-        <!-- ===== TOPBAR ===== -->
-        <header class="topbar">
-            <div>
-                <div class="brand-title">PC<span>Doki</span></div>
-                <div class="brand-sub" id="brand-sub">Röszke · Mérnöki számítógépszerviz</div>
-            </div>
-            <div class="topbar-meta">
-                <span class="topbar-tag">⚡ helyszíni kiszállás</span>
+        <!-- ===== FEJLÉC – PC DOKI PLÉH ===== -->
+        <header class="hero-header">
+            <div class="hero-header-inner">
+                <img src="image.png" 
+                     alt="PC Doki – Számítógép szerviz és egyedi PC építés" 
+                     class="hero-header-img"
+                     loading="lazy">
             </div>
         </header>
 
@@ -86,96 +72,37 @@
             </div>
         </nav>
 
-        <!-- ===== HERO ===== -->
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Probléma van a <span class="highlight">gépeddel</span>?</h1>
-                <p class="hero-lead">Műszaki diagnosztika, javítás, optimalizálás – Röszkén és környékén.</p>
-
-                <div class="hero-slides" id="heroSlides">
-                    <div class="hero-slide active" data-index="0">
-                        <h3>💻 Lassú a géped?</h3>
-                        <p>Nem kell rögtön újat venni. Tisztítással, SSD-vel, memóriabővítéssel éveket nyerhetsz.</p>
-                    </div>
-                    <div class="hero-slide" data-index="1">
-                        <h3>🌐 Lassú a neted?</h3>
-                        <p>Router beállítás, csatornaváltás, firmware frissítés – kiderítem, hol a gond.</p>
-                    </div>
-                    <div class="hero-slide" data-index="2">
-                        <h3>📶 Gyenge a WiFi?</h3>
-                        <p>Vastag falak, rosszul beállított eszközök – megoldom a lefedettségi problémákat.</p>
-                    </div>
-                    <div class="hero-slide" data-index="3">
-                        <h3>👨‍👩‍👧 Szülői felügyelet?</h3>
-                        <p>Biztonságos netezés gyerekeknek – időkorlátok, tartalomszűrés beállítása.</p>
-                    </div>
-
-                    <div class="hero-controls">
-                        <div class="hero-dots">
-                            <button class="hero-dot active" data-index="0" aria-label="1. dia"></button>
-                            <button class="hero-dot" data-index="1" aria-label="2. dia"></button>
-                            <button class="hero-dot" data-index="2" aria-label="3. dia"></button>
-                            <button class="hero-dot" data-index="3" aria-label="4. dia"></button>
-                        </div>
-                        <button class="hero-next" id="heroNext">Következő →</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="hero-visual-placeholder">
-                    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="50" y="80" width="300" height="200" rx="12" stroke="#f59e0b" stroke-width="2" opacity="0.3"/>
-                        <rect x="100" y="120" width="200" height="120" rx="4" fill="#f59e0b" opacity="0.08"/>
-                        <circle cx="200" cy="320" r="40" stroke="#f59e0b" stroke-width="2" opacity="0.2"/>
-                        <circle cx="200" cy="320" r="20" fill="#f59e0b" opacity="0.12"/>
-                        <line x1="160" y1="80" x2="240" y2="80" stroke="#f59e0b" stroke-width="2" opacity="0.15"/>
-                        <line x1="160" y1="280" x2="240" y2="280" stroke="#f59e0b" stroke-width="2" opacity="0.15"/>
-                        <rect x="170" y="60" width="60" height="8" rx="4" fill="#f59e0b" opacity="0.08"/>
-                        <rect x="180" y="300" width="40" height="8" rx="4" fill="#f59e0b" opacity="0.08"/>
-                        <text x="200" y="180" text-anchor="middle" fill="#8899aa" font-size="14" font-family="Inter, sans-serif" opacity="0.4">⚡</text>
-                        <text x="200" y="205" text-anchor="middle" fill="#667788" font-size="12" font-family="Inter, sans-serif" opacity="0.3">PC DOKI</text>
-                    </svg>
-                </div>
-            </div>
+        <!-- ===== HERO SZÖVEG ===== -->
+        <section class="hero-text-section">
+            <h1 class="hero-title">
+                Probléma van a <span class="highlight">gépeddel</span>?
+            </h1>
+            <p class="hero-lead">
+                Műszaki diagnosztika, javítás, optimalizálás – Röszkén és környékén.
+            </p>
         </section>
 
-        <!-- ===== BRANDING BLOKK – PC DOKI PLÉH ===== -->
-        <section class="branding-block">
-            <div class="branding-card">
-                <div class="branding-image">
-                    <img src="754914960_122132804127213078_8682374917421162110_n (3).jpg" 
-                         alt="PC Doki – Számítógép szerviz és egyedi PC építés" 
-                         class="branding-img"
-                         loading="lazy">
-                </div>
-                <div class="branding-overlay">
-                    <div class="branding-tagline">
-                        <span class="branding-highlight">⚡ AMIKOR A GÉPED JÓ KEZEKBEN VAN!</span>
-                    </div>
-                    <div class="branding-features">
-                        <div class="branding-feature">
-                            <span class="bf-icon">🔧</span>
-                            <span class="bf-label">Javítás</span>
-                            <span class="bf-desc">Gyors és megbízható szerviz</span>
-                        </div>
-                        <div class="branding-feature">
-                            <span class="bf-icon">🎮</span>
-                            <span class="bf-label">Gamer PC építés</span>
-                            <span class="bf-desc">Egyedi konfiguráció igényeid szerint</span>
-                        </div>
-                        <div class="branding-feature">
-                            <span class="bf-icon">⚡</span>
-                            <span class="bf-label">Fejlesztés</span>
-                            <span class="bf-desc">Nagyobb teljesítmény könnyedén</span>
-                        </div>
-                        <div class="branding-feature">
-                            <span class="bf-icon">🛡️</span>
-                            <span class="bf-label">Garancia</span>
-                            <span class="bf-desc">PC Doki Garancia</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- ===== SZOLGÁLTATÁSOK (PLÉH STÍLUSBAN) ===== -->
+        <section class="services-plain">
+            <div class="service-plain">
+                <span class="sp-icon">🔧</span>
+                <h3>Javítás</h3>
+                <p>Gyors és megbízható szerviz</p>
+            </div>
+            <div class="service-plain">
+                <span class="sp-icon">🎮</span>
+                <h3>Gamer PC építés</h3>
+                <p>Egyedi konfiguráció igényeid szerint</p>
+            </div>
+            <div class="service-plain">
+                <span class="sp-icon">⚡</span>
+                <h3>Fejlesztés</h3>
+                <p>Nagyobb teljesítmény könnyedén</p>
+            </div>
+            <div class="service-plain">
+                <span class="sp-icon">🛡️</span>
+                <h3>Garancia</h3>
+                <p>PC Doki Garancia</p>
             </div>
         </section>
 
@@ -202,10 +129,10 @@
             </div>
         </section>
 
-        <!-- ===== SZOLGÁLTATÁSOK ===== -->
+        <!-- ===== SZOLGÁLTATÁSOK RÉSZLETEZVE ===== -->
         <section id="szolgaltatasok">
             <h2 class="section-title">Szolgáltatások</h2>
-            <div class="services">
+            <div class="services-grid">
                 <div class="service-item">
                     <span class="icon">💻</span>
                     <h3>PC-Laptop javítás</h3>
@@ -350,7 +277,6 @@
 
     </div>
 
-    <!-- ===== SCRIPTS ===== -->
     <script src="script.js"></script>
 </body>
 
