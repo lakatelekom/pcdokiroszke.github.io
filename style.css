@@ -252,7 +252,7 @@ nav {
   color: #f59e0b;
 }
 
-/* ---------- BRANDING BLOKK – PC DOKI PLÉH ---------- */
+/* ---------- BRANDING BLOKK ---------- */
 .branding-block {
   margin: 2rem 0 3rem;
 }
@@ -270,17 +270,21 @@ nav {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: linear-gradient(180deg, rgba(11, 14, 18, 0.95), rgba(11, 14, 18, 0.85));
   padding: 1.5rem 1rem 0.5rem;
+  min-height: 120px;
 }
 
 .branding-img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 800px;
   height: auto;
-  max-height: 400px;
+  max-height: 450px;
   object-fit: contain;
   border-radius: 8px;
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
+  display: block;
 }
 
 .branding-overlay {
