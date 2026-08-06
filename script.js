@@ -11,24 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let current = 0;
 
         function showSlide(index) {
-            // Ellenőrizzük, hogy a dot-ok száma megegyezik-e a slide-okéval
             if (dots.length === slides.length) {
                 dots.forEach(d => d.classList.remove("active"));
             }
-
             slides.forEach(s => s.classList.remove("active"));
-
-            // Biztonságos index
             current = (index + slides.length) % slides.length;
-
             slides[current].classList.add("active");
-
             if (dots.length === slides.length) {
                 dots[current].classList.add("active");
             }
         }
 
-        // Dot-okra kattintás
         dots.forEach((dot, i) => {
             dot.addEventListener("click", function (e) {
                 e.stopPropagation();
@@ -36,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Következő gomb
         if (nextBtn) {
             nextBtn.addEventListener("click", function (e) {
                 e.stopPropagation();
@@ -44,19 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // Opcionális: kattintás a slide-ra is vált
         slides.forEach((slide) => {
             slide.addEventListener("click", function () {
                 showSlide(current + 1);
             });
         });
 
-        // Automatikus váltás 6 másodpercenként
         let autoInterval = setInterval(() => {
             showSlide(current + 1);
         }, 6000);
 
-        // Megállítjuk az automatikus váltást, ha a felhasználó interaktál
         const heroContainer = document.querySelector(".hero-slides");
         if (heroContainer) {
             heroContainer.addEventListener("mouseenter", () => {
@@ -75,25 +64,48 @@ document.addEventListener("DOMContentLoaded", function () {
     // ================================================================
     const contactToggle = document.getElementById("contact-toggle");
     const contactPanel = document.getElementById("contact-panel");
+    const toggleIcon = document.getElementById("toggle-icon");
 
     if (contactToggle && contactPanel) {
+        contactPanel.classList.remove("open");
+
         contactToggle.addEventListener("click", function (e) {
             e.stopPropagation();
             contactPanel.classList.toggle("open");
+
+            if (toggleIcon) {
+                if (contactPanel.classList.contains("open")) {
+                    toggleIcon.textContent = "✕";
+                } else {
+                    toggleIcon.textContent = "✉";
+                }
+            }
         });
 
-        // Kattintás a panelen kívülre → bezárás
         document.addEventListener("click", function (e) {
-            if (!contactPanel.contains(e.target) && !contactToggle.contains(e.target)) {
+            if (contactPanel.classList.contains("open") &&
+                !contactPanel.contains(e.target) &&
+                !contactToggle.contains(e.target)) {
                 contactPanel.classList.remove("open");
+                if (toggleIcon) {
+                    toggleIcon.textContent = "✉";
+                }
+            }
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && contactPanel.classList.contains("open")) {
+                contactPanel.classList.remove("open");
+                if (toggleIcon) {
+                    toggleIcon.textContent = "✉";
+                }
             }
         });
     }
 
     // ================================================================
-    // 3. TELEFON ÉS EMAIL ÖSSZEÁLLÍTÁSA (botvédelem)
+    // 3. TELEFON ÉS EMAIL ÖSSZEÁLLÍTÁSA
     // ================================================================
-    // Telefon
     const tel = "+36 30 570 1844";
     const telLink = document.getElementById("tel-link");
     if (telLink) {
@@ -101,11 +113,9 @@ document.addEventListener("DOMContentLoaded", function () {
         telLink.href = "tel:+36305701844";
     }
 
-    // E-mail (szétszedve)
     const user = "laszlo.katona.hu";
     const domain = "gmail.com";
     const email = user + "@" + domain;
-
     const mailLink = document.getElementById("mail-link");
     if (mailLink) {
         mailLink.textContent = email;
@@ -113,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ================================================================
-    // 4. BRAND SUB – VÁLTAKOZÓ SZÖVEG (opcionális)
+    // 4. BRAND SUB – VÁLTAKOZÓ SZÖVEG
     // ================================================================
     const brandSub = document.getElementById("brand-sub");
 
