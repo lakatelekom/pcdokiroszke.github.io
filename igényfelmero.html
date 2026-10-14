@@ -67,6 +67,11 @@
         <!-- E-mail beállítások (a saját fiókodban így fog megjelenni az e-mail) -->
         <input type="hidden" name="subject" value="Új igényfelmérés érkezett - PC Doki Röszke">
         <input type="hidden" name="from_name" value="PC Doki Weboldal">
+        <!-- 🛡️ 1. ROBOTBÍZTOS HONEYPOT MEZŐ (Rejtett mező a botok ellen) -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <!-- 🛡️ 2. BEÉPÍTETT SPAM VÉDELEM (Web3Forms AI szűrő) -->
+        <input type="hidden" name="botcheck" value="">
 
         <div class="form-group">
             <label for="name">Név *</label>
