@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igényfelmérő – PC Doki Röszke</title>
+    <meta name="description" content="Töltse ki igényfelmérő űrlapunkat, hogy pontos ajánlatot adhassunk PC javításra, építésre vagy hálózatépítésre.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== LEBEGŐ KONTAKT WIDGET ===== -->
+    <div class="floating-contact-widget">
+        <button id="contact-toggle" aria-label="Kapcsolat">
+            <span id="toggle-icon">✉</span>
+        </button>
+        <div class="contact-panel" id="contact-panel">
+            <p>📋 Gyors kapcsolat</p>
+            <a href="tel:+36305701844" class="contact-btn phone">📞 Hívás</a>
+            <a href="https://m.me/pcdokiroszke" target="_blank" rel="noopener" class="contact-btn messenger">💬 Messenger</a>
+            <a href="https://www.facebook.com/pcdokiroszke" target="_blank" rel="noopener" class="contact-btn facebook">👍 Facebook oldal</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpcdokiroszke.hu" target="_blank" class="contact-btn share">↗ Megosztom</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== FEJLÉC ===== -->
+        <header class="hero-header">
+            <div class="hero-header-inner">
+                <a href="index.html">
+                    <img src="image.png" alt="PC Doki Röszke" class="hero-header-img" loading="lazy">
+                </a>
+            </div>
+        </header>
+
+        <!-- ===== NAVIGÁCIÓ ===== -->
+        <nav>
+            <div class="nav-links">
+                <a href="index.html#rolam">Rólam</a>
+                <a href="index.html#szolgaltatasok">Szolgáltatások</a>
+                <a href="index.html#arak">Árak</a>
+                <a href="igényfelmero.html" class="active">Igényfelmérő</a>
+                <a href="index.html#kapcsolat">Kapcsolat</a>
+            </div>
+        </nav>
+
+        <!-- ===== CÍM SZEKCIÓ ===== -->
+        <section class="hero-text-section">
+            <h1 class="hero-title">Online <span class="highlight">Igényfelmérő</span></h1>
+            <p class="hero-lead">Töltsd ki az alábbi űrlapot, és hamarosan felveszem veled a kapcsolatot a személyre szabott ajánlattal!</p>
+        </section>
+
+        <!-- ===== ŰRLAP SZEKCIÓ ===== -->
+        <section class="form-section">
+            <!-- Formspree, Netlify Forms vagy saját backend script végpont megadható az action-ben -->
+            <form action="https://formspree.io/f/your_form_id" method="POST" class="custom-form">
+                
+                <div class="form-group">
+                    <label for="name">Név *</label>
+                    <input type="text" id="name" name="name" required placeholder="Gipsz Jakab">
+                </div>
+
+                <div class="form-group-grid">
+                    <div class="form-group">
+                        <label for="email">E-mail cím *</label>
+                        <input type="email" id="email" name="email" required placeholder="pelda@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefonszám *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+36 30 123 4567">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Milyen szolgáltatásra van szükséged?</label>
+                    <select id="service" name="service">
+                        <option value="javitas">PC / Laptop javítás, karbantartás</option>
+                        <option value="epites">Új Gamer / Irodai PC építés</option>
+                        <option value="fejlesztes">Gép fejlesztés / SSD bővítés</option>
+                        <option value="halozat">WiFi / Hálózat beállítás</option>
+                        <option value="weboldal">Weboldal készítés / Marketing</option>
+                        <option value="egyeb">Egyéb probléma / Kérdés</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Probléma vagy elképzelés leírása *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Írd le pár mondatban, miben segíthetek (pl. lassú a gép, melegszik, új PC keretösszege, stb.)..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">⚡ Igény elküldése</button>
+            </form>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="clean-footer" style="margin-top: 3rem; text-align: center;">
+            <p>© 2025 PC Doki Röszke – Minden jog fenntartva.</p>
+            <p class="small">Üzemeltető: Katona László e.v.</p>
+            <a href="adatkezeles.pdf" target="_blank" rel="noopener">Adatkezelési tájékoztató (PDF)</a>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
