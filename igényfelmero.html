@@ -234,7 +234,13 @@
         text-align: center;
     }
     .card-option:hover { border-color: #1a3c6e; background: #f7f9fc; transform: translateY(-2px); }
-    .card-option.selected { border-color: #1a3c6e; background: #eaf1f9; box-shadow: 0 0 0 3px rgba(26,60,110,0.15); }
+    .card-option.selected { 
+    border-color: #1a3c6e !important; 
+    border-width: 3px !important;            /* Vastagabb szegély */
+    background: #dbe7f5 !important;           /* Sötétebb/látványosabb kék háttér */
+    box-shadow: 0 4px 12px rgba(26,60,110,0.3) !important; /* Erősebb árnyék és kiemelés */
+    transform: translateY(-3px);              /* Kicsit kiemeli/megemeli a kártyát */
+    }
     .card-icon { font-size: 26px; margin-bottom: 6px; }
     .card-title { font-weight: 700; color: #1a3c6e; font-size: 14px; margin-bottom: 4px; }
     .card-desc { font-size: 12px; color: #666; line-height: 1.3; }
