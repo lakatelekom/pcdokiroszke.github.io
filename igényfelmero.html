@@ -58,56 +58,219 @@
         </section>
 
         <!-- ===== ŰRLAP SZEKCIÓ ===== -->
-        <section class="form-section">
-    <form action="https://api.web3forms.com/submit" method="POST" class="custom-form">
+        <!-- ===== ŰRLAP SZEKCIÓ ===== -->
+<section class="form-section">
+    <form action="https://api.web3forms.com/submit" method="POST" class="custom-form" id="laptop-form">
         
-        <!-- === IDE ÍRD BE A KAPOTT KULCSOT === -->
+        <!-- Web3Forms beállítások -->
         <input type="hidden" name="access_key" value="1afea300-8b46-4437-ac1f-4f10b51cd7a6">
-
-        <!-- E-mail beállítások (a saját fiókodban így fog megjelenni az e-mail) -->
-        <input type="hidden" name="subject" value="Új igényfelmérés érkezett - PC Doki Röszke">
+        <input type="hidden" name="subject" value="Új laptopcsere igényfelmérés érkezett - PC Doki Röszke">
         <input type="hidden" name="from_name" value="PC Doki Weboldal">
-        <!-- 🛡️ 1. ROBOTBÍZTOS HONEYPOT MEZŐ (Rejtett mező a botok ellen) -->
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-  
+        <!-- Dynamic summary field that gets filled automatically -->
+        <input type="hidden" name="Kiválasztott állapot" id="form-allapot" value="">
+        <input type="hidden" name="Költségkeret" id="form-keret" value="">
+        <input type="hidden" name="Felhasználási célok" id="form-celok" value="">
+        <input type="hidden" name="Kijelző méret" id="form-kijelzo" value="">
+        <input type="hidden" name="Fontos funkciók" id="form-funkciok" value="">
 
-        <div class="form-group">
-            <label for="name">Név *</label>
-            <input type="text" id="name" name="Név" required placeholder="Gipsz Jakab">
-        </div>
+        <h2 style="text-align: center; color: #1a3c6e; margin-bottom: 10px;">💻 Laptopcsere Igényfelmérő</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">Kattintson az Önnek megfelelő opciókra a pontos ajánlathoz!</p>
 
-        <div class="form-group-grid">
-            <div class="form-group">
-                <label for="email">E-mail cím *</label>
-                <input type="email" id="email" name="email" required placeholder="pelda@gmail.com">
+        <!-- LÉPÉS 1: ÁLLAPOT -->
+        <div class="step-group">
+            <h3>1. Új vagy felújított/használt laptopot szeretne?</h3>
+            <div class="cards-grid cols-2">
+                <div class="card-option" onclick="selectSingle(this, 'form-allapot')">
+                    <div class="card-icon">✨</div>
+                    <div class="card-title">Gyári új laptop</div>
+                    <div class="card-desc">0 perces, gyári garanciával rendelkező új készülék.</div>
+                </div>
+                <div class="card-option" onclick="selectSingle(this, 'form-allapot')">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-title">Prémium felújított / használt</div>
+                    <div class="card-desc">Üzleti kategóriás, tesztelt laptop garanciával, kedvezőbb áron.</div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="phone">Telefonszám *</label>
-                <input type="tel" id="phone" name="Telefonszám" required placeholder="+36 30 123 4567">
+        </div>
+
+        <!-- LÉPÉS 2: KÖLTSÉGKERET -->
+        <div class="step-group">
+            <h3>2. Milyen költségkeretben gondolkodik?</h3>
+            <div class="cards-grid cols-3">
+                <div class="card-option" onclick="selectSingle(this, 'form-keret')">
+                    <div class="card-icon">🏷️</div>
+                    <div class="card-title">100 000 Ft alatt</div>
+                    <div class="card-desc">Alapvető böngészésre, dokumentumokhoz (főként felújított).</div>
+                </div>
+                <div class="card-option" onclick="selectSingle(this, 'form-keret')">
+                    <div class="card-icon">⚖️</div>
+                    <div class="card-title">100 000 - 200 000 Ft</div>
+                    <div class="card-desc">Arany középút: gyors SSD, jó teljesítmény irodai/otthoni munkára.</div>
+                </div>
+                <div class="card-option" onclick="selectSingle(this, 'form-keret')">
+                    <div class="card-icon">🚀</div>
+                    <div class="card-title">200 000 Ft felett</div>
+                    <div class="card-desc">Nagyobb teljesítmény, komolyabb irodai munka, játék vagy videószerkesztés.</div>
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="service">Milyen szolgáltatásra van szükséged?</label>
-            <select id="service" name="Szolgáltatás">
-                <option value="PC / Laptop javítás, karbantartás">PC / Laptop javítás, karbantartás</option>
-                <option value="Új Gamer / Irodai PC építés">Új Gamer / Irodai PC építés</option>
-                <option value="Gép fejlesztés / SSD bővítés">Gép fejlesztés / SSD bővítés</option>
-                <option value="WiFi / Hálózat beállítás">WiFi / Hálózat beállítás</option>
-                <option value="Weboldal készítés / Marketing">Weboldal készítés / Marketing</option>
-                <option value="Egyéb probléma / Kérdés">Egyéb probléma / Kérdés</option>
-            </select>
+        <!-- LÉPÉS 3: FELHASZNÁLÁSI CÉL -->
+        <div class="step-group">
+            <h3>3. Mire fogja főként használni? (Több is választható)</h3>
+            <div class="cards-grid cols-4">
+                <div class="card-option" onclick="toggleMulti(this, 'form-celok')">
+                    <div class="card-icon">🏠</div>
+                    <div class="card-title">Otthoni használat</div>
+                    <div class="card-desc">Böngészés, filmek, Facebook, YouTube.</div>
+                </div>
+                <div class="card-option" onclick="toggleMulti(this, 'form-celok')">
+                    <div class="card-icon">💼</div>
+                    <div class="card-title">Irodai / Munka</div>
+                    <div class="card-desc">Office (Excel, Word), e-mailek, számlázás, napi munkavégzés.</div>
+                </div>
+                <div class="card-option" onclick="toggleMulti(this, 'form-celok')">
+                    <div class="card-icon">🎮</div>
+                    <div class="card-title">Játék (Gaming)</div>
+                    <div class="card-desc">Gépigényesebb játékok futtatása, dedikált videokártya.</div>
+                </div>
+                <div class="card-option" onclick="toggleMulti(this, 'form-celok')">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-title">Tanulás / Iskola</div>
+                    <div class="card-desc">Online órák, jegyzetelés, könnyű hordozhatóság.</div>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="message">Probléma vagy elképzelés leírása *</label>
-            <textarea id="message" name="Üzenet" rows="5" required placeholder="Írd le pár mondatban, miben segíthetek (pl. lassú a gép, melegszik, új PC keretösszege, stb.)..."></textarea>
+        <!-- LÉPÉS 4: MÉRET ÉS FUNKCIÓK -->
+        <div class="step-group">
+            <h3>4. Kijelző mérete és extra igények</h3>
+            <div class="cards-grid cols-3">
+                <div class="card-option" onclick="selectSingle(this, 'form-kijelzo')">
+                    <div class="card-icon">🎒</div>
+                    <div class="card-title">Kompakt (13"-14")</div>
+                    <div class="card-desc">Könnyű, hordozható, utazáshoz ideális.</div>
+                </div>
+                <div class="card-option" onclick="selectSingle(this, 'form-kijelzo')">
+                    <div class="card-icon">💻</div>
+                    <div class="card-title">Standard (15.6")</div>
+                    <div class="card-desc">A legnépszerűbb méret, számbillentyűzettel.</div>
+                </div>
+                <div class="card-option" onclick="selectSingle(this, 'form-kijelzo')">
+                    <div class="card-icon">🖥️</div>
+                    <div class="card-title">Nagy kijelző (17.3")</div>
+                    <div class="card-desc">Asztali gép helyett, nagy képernyő, kényelmes munka.</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 15px;" class="cards-grid cols-3">
+                <div class="card-option" onclick="toggleMulti(this, 'form-funkciok')">
+                    <div class="card-icon">⌨️</div>
+                    <div class="card-title">Világító billentyűzet</div>
+                </div>
+                <div class="card-option" onclick="toggleMulti(this, 'form-funkciok')">
+                    <div class="card-icon">📦</div>
+                    <div class="card-title">Régi adatok átmásolása</div>
+                </div>
+                <div class="card-option" onclick="toggleMulti(this, 'form-funkciok')">
+                    <div class="card-icon">🛡️</div>
+                    <div class="card-title">Eredeti Windows + Vírusirtó</div>
+                </div>
+            </div>
         </div>
 
-        <button type="submit" class="submit-btn">⚡ Igény elküldése</button>
+        <!-- LÉPÉS 5: ELÉRHERŐSÉGI ADATOK -->
+        <div class="step-group" style="background: #f0f4fa; padding: 20px; border-radius: 8px; margin-top: 30px;">
+            <h3 style="margin-top:0;">5. Az Ön elérhetőségei</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                <div>
+                    <label style="display:block; font-weight:bold; margin-bottom:5px;">Név *</label>
+                    <input type="text" name="Név" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:bold; margin-bottom:5px;">Telefonszám *</label>
+                    <input type="tel" name="Telefonszám" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <label style="display:block; font-weight:bold; margin-bottom:5px;">E-mail cím</label>
+                <input type="email" name="E-mail" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="display:block; font-weight:bold; margin-bottom:5px;">Egyéb megjegyzés, meglévő régi laptop típusa (ha van)</label>
+                <textarea name="Egyéb megjegyzés" rows="3" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;"></textarea>
+            </div>
+
+            <button type="submit" style="width:100%; background:#1a3c6e; color:white; padding:15px; border:none; border-radius:6px; font-size:18px; font-weight:bold; cursor:pointer;">
+                📩 Ajánlatkérés elküldése
+            </button>
+        </div>
+
     </form>
 </section>
+
+<!-- ===== STÍLUSOK ÉS INTERAKCIÓ ===== -->
+<style>
+    .step-group { margin-bottom: 30px; }
+    .step-group h3 { font-size: 16px; color: #1a3c6e; margin-bottom: 12px; border-bottom: 2px solid #e0e5ec; padding-bottom: 5px; }
+    .cards-grid { display: grid; gap: 12px; }
+    .cols-2 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    
+    .card-option {
+        border: 2px solid #e0e5ec;
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 14px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+    }
+    .card-option:hover { border-color: #1a3c6e; background: #f7f9fc; transform: translateY(-2px); }
+    .card-option.selected { border-color: #1a3c6e; background: #eaf1f9; box-shadow: 0 0 0 3px rgba(26,60,110,0.15); }
+    .card-icon { font-size: 26px; margin-bottom: 6px; }
+    .card-title { font-weight: 700; color: #1a3c6e; font-size: 14px; margin-bottom: 4px; }
+    .card-desc { font-size: 12px; color: #666; line-height: 1.3; }
+</style>
+
+<script>
+    // Egyetlen opció kiválasztása (pl. költségkeret, állapot)
+    function selectSingle(card, hiddenInputId) {
+        const parentGrid = card.parentElement;
+        parentGrid.querySelectorAll('.card-option').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        
+        const title = card.querySelector('.card-title').innerText;
+        document.getElementById(hiddenInputId).value = title;
+    }
+
+    // Több opció kijelölése (pl. célok, funkciók)
+    function toggleMulti(card, hiddenInputId) {
+        card.classList.toggle('selected');
+        const parentGrid = card.parentElement;
+        const selectedTitles = [];
+        
+        // Összegyűjtjük a kijelölteket
+        document.querySelectorAll(`.card-option.selected`).forEach(c => {
+            const titleEl = c.querySelector('.card-title');
+            if (titleEl && c.closest('.cards-grid') === parentGrid) {
+                selectedTitles.push(titleEl.innerText);
+            }
+        });
+
+        // Ha a szülő rácson belülieket gyűjtjük
+        const items = Array.from(parentGrid.querySelectorAll('.card-option.selected'))
+                           .map(c => c.querySelector('.card-title').innerText);
+                           
+        document.getElementById(hiddenInputId).value = items.join(', ');
+    }
+</script>
 
         <!-- ===== FOOTER ===== -->
         <footer class="clean-footer" style="margin-top: 3rem; text-align: center;">
