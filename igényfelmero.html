@@ -117,7 +117,7 @@
             </div>
         </div>
 
-        <!-- LÉPÉS 3: FELHASZNÁLÁSI CÉL -->
+       <!-- LÉPÉS 3: FELHASZNÁLÁSI CÉL -->
         <div class="step-group">
             <h3>3. Mire fogja főként használni? (Több is választható)</h3>
             <div class="cards-grid cols-4">
@@ -141,12 +141,24 @@
                     <div class="card-title">Tanulás / Iskola</div>
                     <div class="card-desc">Online órák, jegyzetelés, könnyű hordozhatóság.</div>
                 </div>
+                <!-- ÚJ CSEMPA: Utazáshoz / Akku -->
+                <div class="card-option" onclick="toggleMulti(this, 'form-celok')">
+                    <div class="card-icon">✈️</div>
+                    <div class="card-title">Utazás / Jó akku</div>
+                    <div class="card-desc">Gyakori hordozáshoz, kiemelkedő akkumulátor-idővel.</div>
+                </div>
+                <!-- ÚJ CSEMPE: Zárt fedeles / Külső kijelzős használat -->
+                <div class="card-option" onclick="toggleMulti(this, 'form-celok')">
+                    <div class="card-icon">🖥️</div>
+                    <div class="card-title">Legolcsóbb (Külső monitorral)</div>
+                    <div class="card-desc">Saját monitorral/billentyűzettel, összecsukva használnám (nem baj, ha hibás a saját kijelző/billentyűzet).</div>
+                </div>
             </div>
         </div>
 
         <!-- LÉPÉS 4: MÉRET ÉS FUNKCIÓK -->
         <div class="step-group">
-            <h3>4. Kijelző mérete és extra igények</h3>
+            <h3>4. Kijelző mérete, billentyűzet és extra igények</h3>
             <div class="cards-grid cols-3">
                 <div class="card-option" onclick="selectSingle(this, 'form-kijelzo')">
                     <div class="card-icon">🎒</div>
@@ -165,7 +177,20 @@
                 </div>
             </div>
 
+            <!-- Funkciók és Billentyűzet kiosztás csempék -->
             <div style="margin-top: 15px;" class="cards-grid cols-3">
+                <!-- ÚJ CSEMPE: Magyar teljes értékű -->
+                <div class="card-option" onclick="toggleMulti(this, 'form-funkciok')">
+                    <div class="card-icon">🇭🇺</div>
+                    <div class="card-title">Magyar teljes értékű billentyűzet</div>
+                    <div class="card-desc">Gyári magyar kiosztás, külön numpaddal (számsorral).</div>
+                </div>
+                <!-- ÚJ CSEMPE: Angol / Külföldi kiosztás -->
+                <div class="card-option" onclick="toggleMulti(this, 'form-funkciok')">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-title">Angol / Külföldi billentyűzet is jó</div>
+                    <div class="card-desc">Matricázott vagy átbeállított billentyűzet is megfelel (kedvezőbb ár).</div>
+                </div>
                 <div class="card-option" onclick="toggleMulti(this, 'form-funkciok')">
                     <div class="card-icon">⌨️</div>
                     <div class="card-title">Világító billentyűzet</div>
